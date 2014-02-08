@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 56c5a77ed3173a644802f7497cdebc76
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: C3D 1:Corey1_ARIEL
+    100002: C3D 1:Corey1_C7
+    100004: C3D 1:Corey1_CLAV
+    100006: C3D 1:Corey1_LANK
+    100008: C3D 1:Corey1_LBHD
+    100010: C3D 1:Corey1_LBSH
+    100012: C3D 1:Corey1_LBWT
+    100014: C3D 1:Corey1_LELB
+    100016: C3D 1:Corey1_LFHD
+    100018: C3D 1:Corey1_LFSH
+    100020: C3D 1:Corey1_LFWT
+    100022: C3D 1:Corey1_LHEL
+    100024: C3D 1:Corey1_LHIP
+    100026: C3D 1:Corey1_LIEL
+    100028: C3D 1:Corey1_LIHAND
+    100030: C3D 1:Corey1_LIWR
+    100032: C3D 1:Corey1_LKNE
+    100034: C3D 1:Corey1_LKNI
+    100036: C3D 1:Corey1_LMT1
+    100038: C3D 1:Corey1_LMT5
+    100040: C3D 1:Corey1_LMWT
+    100042: C3D 1:Corey1_LOHAND
+    100044: C3D 1:Corey1_LOWR
+    100046: C3D 1:Corey1_LSHN
+    100048: C3D 1:Corey1_LTOE
+    100050: C3D 1:Corey1_LUPA
+    100052: C3D 1:Corey1_LWRE
+    100054: C3D 1:Corey1_RANK
+    100056: C3D 1:Corey1_RBHD
+    100058: C3D 1:Corey1_RBSH
+    100060: C3D 1:Corey1_RBWT
+    100062: C3D 1:Corey1_RELB
+    100064: C3D 1:Corey1_RFHD
+    100066: C3D 1:Corey1_RFSH
+    100068: C3D 1:Corey1_RFWT
+    100070: C3D 1:Corey1_RHEL
+    100072: C3D 1:Corey1_RHIP
+    100074: C3D 1:Corey1_RIEL
+    100076: C3D 1:Corey1_RIHAND
+    100078: C3D 1:Corey1_RIWR
+    100080: C3D 1:Corey1_RKNE
+    100082: C3D 1:Corey1_RKNI
+    100084: C3D 1:Corey1_RMT1
+    100086: C3D 1:Corey1_RMT5
+    100088: C3D 1:Corey1_RMWT
+    100090: C3D 1:Corey1_ROHAND
+    100092: C3D 1:Corey1_ROWR
+    100094: C3D 1:Corey1_RSHN
+    100096: C3D 1:Corey1_RTOE
+    100098: C3D 1:Corey1_RUPA
+    100100: C3D 1:Corey1_RWRE
+    100102: C3D 1:Corey1_STRN
+    100104: C3D 1:Corey1_T10
+    100106: C3D 1:CoreySword_SWDHND
+    100108: C3D 1:CoreySword_SWDPT
+    100110: C3D 1:optical
+    100112: C3D:Corey1_ARIEL
+    100114: C3D:Corey1_C7
+    100116: C3D:Corey1_CLAV
+    100118: C3D:Corey1_LANK
+    100120: C3D:Corey1_LBHD
+    100122: C3D:Corey1_LBSH
+    100124: C3D:Corey1_LBWT
+    100126: C3D:Corey1_LELB
+    100128: C3D:Corey1_LFHD
+    100130: C3D:Corey1_LFSH
+    100132: C3D:Corey1_LFWT
+    100134: C3D:Corey1_LHEL
+    100136: C3D:Corey1_LHIP
+    100138: C3D:Corey1_LIEL
+    100140: C3D:Corey1_LIHAND
+    100142: C3D:Corey1_LIWR
+    100144: C3D:Corey1_LKNE
+    100146: C3D:Corey1_LKNI
+    100148: C3D:Corey1_LMT1
+    100150: C3D:Corey1_LMT5
+    100152: C3D:Corey1_LMWT
+    100154: C3D:Corey1_LOHAND
+    100156: C3D:Corey1_LOWR
+    100158: C3D:Corey1_LSHN
+    100160: C3D:Corey1_LTOE
+    100162: C3D:Corey1_LUPA
+    100164: C3D:Corey1_LWRE
+    100166: C3D:Corey1_RANK
+    100168: C3D:Corey1_RBHD
+    100170: C3D:Corey1_RBSH
+    100172: C3D:Corey1_RBWT
+    100174: C3D:Corey1_RELB
+    100176: C3D:Corey1_RFHD
+    100178: C3D:Corey1_RFSH
+    100180: C3D:Corey1_RFWT
+    100182: C3D:Corey1_RHEL
+    100184: C3D:Corey1_RHIP
+    100186: C3D:Corey1_RIEL
+    100188: C3D:Corey1_RIHAND
+    100190: C3D:Corey1_RIWR
+    100192: C3D:Corey1_RKNE
+    100194: C3D:Corey1_RKNI
+    100196: C3D:Corey1_RMT1
+    100198: C3D:Corey1_RMT5
+    100200: C3D:Corey1_RMWT
+    100202: C3D:Corey1_ROHAND
+    100204: C3D:Corey1_ROWR
+    100206: C3D:Corey1_RSHN
+    100208: C3D:Corey1_RTOE
+    100210: C3D:Corey1_RUPA
+    100212: C3D:Corey1_RWRE
+    100214: C3D:Corey1_STRN
+    100216: C3D:Corey1_T10
+    100218: C3D:CoreySword_SWDHND
+    100220: C3D:CoreySword_SWDPT
+    100222: C3D:optical
+    100224: Head
+    100226: HeadTop_End
+    100228: Hips
+    100230: LeftArm
+    100232: LeftFoot
+    100234: LeftForeArm
+    100236: LeftHand
+    100238: LeftHandIndex1
+    100240: LeftHandIndex2
+    100242: LeftHandIndex3
+    100244: LeftHandIndex4
+    100246: LeftLeg
+    100248: LeftShoulder
+    100250: LeftToe_End
+    100252: LeftToeBase
+    100254: LeftUpLeg
+    100256: man
+    100258: Neck
+    100260: Reference
+    100262: //RootNode
+    100264: RightArm
+    100266: RightFoot
+    100268: RightForeArm
+    100270: RightHand
+    100272: RightHandIndex1
+    100274: RightHandIndex2
+    100276: RightHandIndex3
+    100278: RightHandIndex4
+    100280: RightLeg
+    100282: RightShoulder
+    100284: RightToe_End
+    100286: RightToeBase
+    100288: RightUpLeg
+    100290: Spine
+    100292: Spine1
+    100294: Spine2
+    400000: C3D 1:Corey1_ARIEL
+    400002: C3D 1:Corey1_C7
+    400004: C3D 1:Corey1_CLAV
+    400006: C3D 1:Corey1_LANK
+    400008: C3D 1:Corey1_LBHD
+    400010: C3D 1:Corey1_LBSH
+    400012: C3D 1:Corey1_LBWT
+    400014: C3D 1:Corey1_LELB
+    400016: C3D 1:Corey1_LFHD
+    400018: C3D 1:Corey1_LFSH
+    400020: C3D 1:Corey1_LFWT
+    400022: C3D 1:Corey1_LHEL
+    400024: C3D 1:Corey1_LHIP
+    400026: C3D 1:Corey1_LIEL
+    400028: C3D 1:Corey1_LIHAND
+    400030: C3D 1:Corey1_LIWR
+    400032: C3D 1:Corey1_LKNE
+    400034: C3D 1:Corey1_LKNI
+    400036: C3D 1:Corey1_LMT1
+    400038: C3D 1:Corey1_LMT5
+    400040: C3D 1:Corey1_LMWT
+    400042: C3D 1:Corey1_LOHAND
+    400044: C3D 1:Corey1_LOWR
+    400046: C3D 1:Corey1_LSHN
+    400048: C3D 1:Corey1_LTOE
+    400050: C3D 1:Corey1_LUPA
+    400052: C3D 1:Corey1_LWRE
+    400054: C3D 1:Corey1_RANK
+    400056: C3D 1:Corey1_RBHD
+    400058: C3D 1:Corey1_RBSH
+    400060: C3D 1:Corey1_RBWT
+    400062: C3D 1:Corey1_RELB
+    400064: C3D 1:Corey1_RFHD
+    400066: C3D 1:Corey1_RFSH
+    400068: C3D 1:Corey1_RFWT
+    400070: C3D 1:Corey1_RHEL
+    400072: C3D 1:Corey1_RHIP
+    400074: C3D 1:Corey1_RIEL
+    400076: C3D 1:Corey1_RIHAND
+    400078: C3D 1:Corey1_RIWR
+    400080: C3D 1:Corey1_RKNE
+    400082: C3D 1:Corey1_RKNI
+    400084: C3D 1:Corey1_RMT1
+    400086: C3D 1:Corey1_RMT5
+    400088: C3D 1:Corey1_RMWT
+    400090: C3D 1:Corey1_ROHAND
+    400092: C3D 1:Corey1_ROWR
+    400094: C3D 1:Corey1_RSHN
+    400096: C3D 1:Corey1_RTOE
+    400098: C3D 1:Corey1_RUPA
+    400100: C3D 1:Corey1_RWRE
+    400102: C3D 1:Corey1_STRN
+    400104: C3D 1:Corey1_T10
+    400106: C3D 1:CoreySword_SWDHND
+    400108: C3D 1:CoreySword_SWDPT
+    400110: C3D 1:optical
+    400112: C3D:Corey1_ARIEL
+    400114: C3D:Corey1_C7
+    400116: C3D:Corey1_CLAV
+    400118: C3D:Corey1_LANK
+    400120: C3D:Corey1_LBHD
+    400122: C3D:Corey1_LBSH
+    400124: C3D:Corey1_LBWT
+    400126: C3D:Corey1_LELB
+    400128: C3D:Corey1_LFHD
+    400130: C3D:Corey1_LFSH
+    400132: C3D:Corey1_LFWT
+    400134: C3D:Corey1_LHEL
+    400136: C3D:Corey1_LHIP
+    400138: C3D:Corey1_LIEL
+    400140: C3D:Corey1_LIHAND
+    400142: C3D:Corey1_LIWR
+    400144: C3D:Corey1_LKNE
+    400146: C3D:Corey1_LKNI
+    400148: C3D:Corey1_LMT1
+    400150: C3D:Corey1_LMT5
+    400152: C3D:Corey1_LMWT
+    400154: C3D:Corey1_LOHAND
+    400156: C3D:Corey1_LOWR
+    400158: C3D:Corey1_LSHN
+    400160: C3D:Corey1_LTOE
+    400162: C3D:Corey1_LUPA
+    400164: C3D:Corey1_LWRE
+    400166: C3D:Corey1_RANK
+    400168: C3D:Corey1_RBHD
+    400170: C3D:Corey1_RBSH
+    400172: C3D:Corey1_RBWT
+    400174: C3D:Corey1_RELB
+    400176: C3D:Corey1_RFHD
+    400178: C3D:Corey1_RFSH
+    400180: C3D:Corey1_RFWT
+    400182: C3D:Corey1_RHEL
+    400184: C3D:Corey1_RHIP
+    400186: C3D:Corey1_RIEL
+    400188: C3D:Corey1_RIHAND
+    400190: C3D:Corey1_RIWR
+    400192: C3D:Corey1_RKNE
+    400194: C3D:Corey1_RKNI
+    400196: C3D:Corey1_RMT1
+    400198: C3D:Corey1_RMT5
+    400200: C3D:Corey1_RMWT
+    400202: C3D:Corey1_ROHAND
+    400204: C3D:Corey1_ROWR
+    400206: C3D:Corey1_RSHN
+    400208: C3D:Corey1_RTOE
+    400210: C3D:Corey1_RUPA
+    400212: C3D:Corey1_RWRE
+    400214: C3D:Corey1_STRN
+    400216: C3D:Corey1_T10
+    400218: C3D:CoreySword_SWDHND
+    400220: C3D:CoreySword_SWDPT
+    400222: C3D:optical
+    400224: Head
+    400226: HeadTop_End
+    400228: Hips
+    400230: LeftArm
+    400232: LeftFoot
+    400234: LeftForeArm
+    400236: LeftHand
+    400238: LeftHandIndex1
+    400240: LeftHandIndex2
+    400242: LeftHandIndex3
+    400244: LeftHandIndex4
+    400246: LeftLeg
+    400248: LeftShoulder
+    400250: LeftToe_End
+    400252: LeftToeBase
+    400254: LeftUpLeg
+    400256: man
+    400258: Neck
+    400260: Reference
+    400262: //RootNode
+    400264: RightArm
+    400266: RightFoot
+    400268: RightForeArm
+    400270: RightHand
+    400272: RightHandIndex1
+    400274: RightHandIndex2
+    400276: RightHandIndex3
+    400278: RightHandIndex4
+    400280: RightLeg
+    400282: RightShoulder
+    400284: RightToe_End
+    400286: RightToeBase
+    400288: RightUpLeg
+    400290: Spine
+    400292: Spine1
+    400294: Spine2
+    7400000: Retreat
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
