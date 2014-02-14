@@ -2,17 +2,19 @@ using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	
+	public Transform _MyShadow;
+
+	public GUIText _MyActionText;
+
+	public Transform _MyReference;
+
+
 	private AnimationState _anim;
 	private bool _inStartSequence;
 	private Vector3 _changeInDistance;
 	private Vector3 _currentDistance;
 	private Transform _hips;
 	private Player _thePlayer;
-	
-	public Transform _MyShadow;
-	
-	public Transform _MyReference;
 	
 	public enum State{
 		engarde,
@@ -37,8 +39,8 @@ public class Player : MonoBehaviour {
 		animation.CrossFadeQueued("EngardePosition");
 		
 		_anim = animation["ReadyPosition"];
-		_CurrentState = State.engarde;
-		_animState = State.engarde;
+		SetState(State.engarde);
+		SetAnimState(State.engarde);
 		_changeInDistance = new Vector3(0.0f, 0.0f, 0.0f);
 		_currentDistance = new Vector3(0.0f, 0.0f, 0.0f);
 		_hips = transform.FindChild("Hips");
@@ -65,7 +67,7 @@ public class Player : MonoBehaviour {
 		
 		if(!animation.isPlaying){
 			_inStartSequence = false;
-			_CurrentState = State.idle;
+			SetState(State.idle);
 		}
 		
 		if(!_inStartSequence){
@@ -96,20 +98,20 @@ public class Player : MonoBehaviour {
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
 			}
 			else if(Input.GetKey (KeyCode.Q) || Input.GetButtonDown("Y Button")){
-				PlayMyAnimation("ParryOne", State.lungeRecover);
+				PlayMyAnimation("ParryOne", State.parryOne);
 			}
 			//not yet in the FENCER animations
 			/*else if(Input.GetKey (KeyCode.Keypad4)){
 				PlayMyAnimation("ParryFourNoExt", State.lungeRecover);
 			}*/
 			else if(Input.GetKey (KeyCode.W) || Input.GetButtonDown("B Button")){
-				PlayMyAnimation("ParrySix", State.lungeRecover);
+				PlayMyAnimation("ParrySix", State.parrySix);
 			}
 			else if(Input.GetKey (KeyCode.E)){
-				PlayMyAnimation("ParrySeven", State.lungeRecover);
+				PlayMyAnimation("ParrySeven", State.parrySeven);
 			}
 			else if(Input.GetKey (KeyCode.R) || Input.GetButtonDown("X Button")){
-				PlayMyAnimation("ParrySeven", State.lungeRecover);
+				PlayMyAnimation("ParrySeven", State.parrySeven);
 			}
 			//not working with FENCER
 			/*
@@ -117,7 +119,7 @@ public class Player : MonoBehaviour {
 				PlayMyAnimation("ParryEight", State.lungeRecover);
 			}*/
 			else{
-				_CurrentState = State.idle;	
+				SetState(State.idle);
 			}
 		}
 	}
@@ -141,10 +143,10 @@ public class Player : MonoBehaviour {
 	
 	private void PlayMyAnimation(string myAnimation, State newState){
 		if(!animation.isPlaying){
-			animation.Play (myAnimation);
+			animation.Play(myAnimation);
 			_anim = animation[myAnimation];
-			_CurrentState = newState;
-			_animState = newState;
+			SetState(newState);
+			SetAnimState(newState);
 			
 		
 			_MyReference.position = _hips.position;
@@ -156,12 +158,25 @@ public class Player : MonoBehaviour {
 			animation.Stop(_anim.name);
 			animation.Play (myAnimation);
 			_anim = animation[myAnimation];
-			_CurrentState = newState;
+			SetState(newState);
 			
 			_MyReference.position = _hips.position;
 			_currentDistance += new Vector3(0.0f, 0.0f, _changeInDistance.z);
 			//Debug.Log(_currentDistance.ToString());
 			transform.position += _currentDistance;
 		}
+	}
+
+	void SetState(Player.State newState){
+		_CurrentState = newState;
+		SetMyActionText();
+	}
+
+	void SetAnimState(Player.State newState){
+		_animState = newState;
+	}
+
+	void SetMyActionText(){
+		_MyActionText.text = _CurrentState.ToString();
 	}
 }
