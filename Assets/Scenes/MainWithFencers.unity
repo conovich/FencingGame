@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MyShadow: {fileID: 2012302516}
+  _MyActionText: {fileID: 41993937}
   _MyReference: {fileID: 1192361105}
   _CurrentState: 0
 --- !u!95 &78145355
@@ -1212,6 +1213,10 @@ Prefab:
       propertyPath: _MyShadow
       value: 
       objectReference: {fileID: 385717886}
+    - target: {fileID: 11400000, guid: 2091a84f2b2664c4d83f5801a918270d, type: 2}
+      propertyPath: _MyActionText
+      value: 
+      objectReference: {fileID: 1841301317}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2091a84f2b2664c4d83f5801a918270d, type: 2}
   m_RootGameObject: {fileID: 1444483059}
@@ -2978,6 +2983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MyShadow: {fileID: 0}
+  _MyActionText: {fileID: 0}
   _MyReference: {fileID: 1337545335}
   _CurrentState: 0
 --- !u!111 &1066878906
@@ -4337,6 +4343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MyShadow: {fileID: 385717886}
+  _MyActionText: {fileID: 1841301317}
   _MyReference: {fileID: 757434511}
   _CurrentState: 0
 --- !u!1 &1472948897
@@ -4842,6 +4849,10 @@ Prefab:
       propertyPath: _MyShadow
       value: 
       objectReference: {fileID: 2012302516}
+    - target: {fileID: 11400000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: _MyActionText
+      value: 
+      objectReference: {fileID: 41993937}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 78145351}
@@ -5447,6 +5458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MyShadow: {fileID: 0}
+  _MyActionText: {fileID: 0}
   _MyReference: {fileID: 1842504212}
   _CurrentState: 0
 --- !u!1001 &1824265187
