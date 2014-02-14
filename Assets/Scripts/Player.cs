@@ -144,6 +144,7 @@ public class Player : MonoBehaviour {
 	private void PlayMyAnimation(string myAnimation, State newState){
 		if(!animation.isPlaying){
 			animation.Play(myAnimation);
+			//animation.Blend(myAnimation,0.2f, 1.0f);
 			_anim = animation[myAnimation];
 			SetState(newState);
 			SetAnimState(newState);
