@@ -74,7 +74,7 @@ QualitySettings:
     blendWeights: 2
     textureQuality: 0
     anisotropicTextures: 1
-    antiAliasing: 0
+    antiAliasing: 8
     softParticles: 0
     softVegetation: 1
     vSyncCount: 1
@@ -122,11 +122,14 @@ QualitySettings:
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 2
+    BlackBerry: 0
     FlashPlayer: 3
     GLES Emulation: 3
     PS3: 3
     Standalone: 3
+    WP8: 0
     Web: 3
     Wii: 3
+    Windows Store Apps: 0
     XBOX360: 3
     iPhone: 2
