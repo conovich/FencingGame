@@ -4278,6 +4278,7 @@ GameObject:
   - 4: {fileID: 1444483060}
   - 111: {fileID: 1444483062}
   - 114: {fileID: 1444483063}
+  - 114: {fileID: 1444483061}
   m_Layer: 0
   m_Name: FENCER_OPPONENT
   m_TagString: Opponent
@@ -4302,6 +4303,17 @@ Transform:
   - {fileID: 989801416}
   - {fileID: 757434511}
   m_Father: {fileID: 0}
+--- !u!114 &1444483061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444483059}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6038770000e80ea4e9fc8682de3cd852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!111 &1444483062
 Animation:
   m_ObjectHideFlags: 0
