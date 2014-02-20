@@ -88,10 +88,10 @@ public class Player : MonoBehaviour {
 	
 	private void GetInputPlayer(){
 		if(!animation.isPlaying){
-			if(Input.GetKey (KeyCode.RightArrow) || Input.GetAxis("X Axis") > 0){
+			if(Input.GetKey (KeyCode.RightArrow) ){//|| Input.GetAxis("X Axis") > 0){
 				PlayMyAnimation("Advance 1", State.advance);
 			}
-			else if(Input.GetKey (KeyCode.LeftArrow) || Input.GetAxis("X Axis") < 0){
+			else if(Input.GetKey (KeyCode.LeftArrow) ){//|| Input.GetAxis("X Axis") < 0){
 				PlayMyAnimation("Retreat", State.retreat);
 			}
 			else if(Input.GetKey (KeyCode.Space) || Input.GetButtonDown("A Button")){

@@ -21,7 +21,7 @@ public class JointFollow: MonoBehaviour {
 	void Update () {
 		UpdateMyPosition();
 
-		UpdateMyRotation();
+		//UpdateMyRotation();
 
 		
 	}
@@ -30,10 +30,12 @@ public class JointFollow: MonoBehaviour {
 		_MyRoot.position = _JointToFollow.position + _Offset;
 	}
 
-	void UpdateMyRotation(){
+	/*void UpdateMyRotation(){
+		Debug.Log("Updating Rot");
+
 		_ChangeInRot = (_JointToFollow.rotation.eulerAngles - _origFollowRot);
 		Vector3 newRot = _origMyRot + _ChangeInRot;
 		_MyRoot.eulerAngles.Set(newRot.x, newRot.y, newRot.z);// += _JointToFollow.rotation - _oldFollowRot;
 
-	}
+	}*/
 }

@@ -23,10 +23,10 @@ public class JoystickInput : MonoBehaviour {
 			Debug.Log("YAY Y");
 		}
 		if(Input.GetAxis("X Axis") > 0){
-			Debug.Log("HEYO +X AXIS");
+			//Debug.Log("HEYO +X AXIS" + Input.GetAxis("X Axis"));
 		}
 		if(Input.GetAxis("X Axis") < 0){
-			Debug.Log("HEYO -X AXIS");
+			//Debug.Log("HEYO -X AXIS" + Input.GetAxis("X Axis"));
 		}
 	}
 }
