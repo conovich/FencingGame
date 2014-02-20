@@ -1119,6 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MyShadow: {fileID: 0}
+  _MyActionText: {fileID: 0}
   _MyReference: {fileID: 400070}
   _CurrentState: 0
 --- !u!137 &13700000
