@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SwordInput : MonoBehaviour {
+public class SwordController : MonoBehaviour {
 	public Transform _MyHilt;
 	public Transform _MyTip;
 
@@ -44,9 +44,12 @@ public class SwordInput : MonoBehaviour {
 
 			float thetaX = xInput/swordLength;
 
-			if(_MyHilt.eulerAngles.y > 
 			_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
 			_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, -thetaX*rotMagnitude); //since sword rotated in scene, -global x = local z
 		}
+	}
+
+	void OnCollisionEnter(Collision collision){ //should be for rigidbody collisions -- blade, not tip
+
 	}
 }
