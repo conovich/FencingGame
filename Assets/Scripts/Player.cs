@@ -88,11 +88,13 @@ public class Player : MonoBehaviour {
 	
 	private void GetInputPlayer(){
 		if(!animation.isPlaying){
-			if(Input.GetKey (KeyCode.RightArrow) ){//|| Input.GetAxis("X Axis") > 0){
+			if(Input.GetKey (KeyCode.RightArrow) || Input.GetButtonDown("Right Bumper")){
 				PlayMyAnimation("Advance 1", State.advance);
+				Debug.Log("right bumper");
 			}
-			else if(Input.GetKey (KeyCode.LeftArrow) ){//|| Input.GetAxis("X Axis") < 0){
+			else if(Input.GetKey (KeyCode.LeftArrow) || Input.GetButtonDown("Left Bumper")){
 				PlayMyAnimation("Retreat", State.retreat);
+				Debug.Log("left bumper");
 			}
 			else if(Input.GetKey (KeyCode.Space) || Input.GetButtonDown("A Button")){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
