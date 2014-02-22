@@ -5,6 +5,9 @@ public class LightBox : MonoBehaviour {
 	public Light _GreenLight;
 	public Light _RedLight;
 
+	private float colorTimer;
+	private float colorTimerMax = 2.0f;
+
 	public enum LightState{
 		off,
 		green,
@@ -16,7 +19,7 @@ public class LightBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_myLightState = LightState.off;
+		InitLightBox();
 	}
 	
 	// Update is called once per frame
@@ -27,22 +30,38 @@ public class LightBox : MonoBehaviour {
 				break;
 			case LightState.green:
 				ChangeLightColor(_GreenLight, Color.green);
+				UpdateColorTimer();
 				break;
 			case LightState.red:
 				ChangeLightColor(_RedLight, Color.red);
+				UpdateColorTimer();
 				break;
 			case LightState.greenAndRed:
 				ChangeLightColor(_GreenLight, Color.green);
 				ChangeLightColor(_RedLight, Color.red);
+				UpdateColorTimer();
 				break;
 		}
 	}
 
-	void UpdateColorTimer(){
-
+	void InitLightBox(){
+		_myLightState = LightState.off;
+		ResetColorTimer();
 	}
 
-	void ChangeLightColor(Light light, Color newColor){
+	void UpdateColorTimer(){
+		colorTimer = colorTimer - Time.deltaTime;
+		if(colorTimer <= 0){
+			ResetColorTimer();
+			_myLightState = LightState.off;
+		}
+	}
+
+	void ResetColorTimer(){
+		colorTimer = colorTimerMax;
+	}
+
+	public void ChangeLightColor(Light light, Color newColor){
 		light.color = newColor;
 	}
 

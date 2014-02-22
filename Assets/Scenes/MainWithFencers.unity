@@ -113,7 +113,7 @@ GameObject:
   - 23: {fileID: 22586936}
   m_Layer: 0
   m_Name: RightForearmCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ GameObject:
   - 23: {fileID: 35907929}
   m_Layer: 0
   m_Name: LeftFootCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,6 +564,58 @@ Prefab:
       propertyPath: _MyActionText
       value: 
       objectReference: {fileID: 41993937}
+    - target: {fileID: 100090, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100080, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100104, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100098, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player1Collider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 78145351}
@@ -811,7 +863,7 @@ GameObject:
   - 23: {fileID: 309270023}
   m_Layer: 0
   m_Name: LeftForearmCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -991,7 +1043,7 @@ GameObject:
   - 23: {fileID: 398531447}
   m_Layer: 0
   m_Name: LeftLowLegCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,7 +1176,7 @@ GameObject:
   - 23: {fileID: 406308774}
   m_Layer: 0
   m_Name: LeftForearmCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,7 +1331,7 @@ GameObject:
   - 23: {fileID: 481074717}
   m_Layer: 0
   m_Name: RightUpLegCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1351,7 +1403,7 @@ GameObject:
   - 23: {fileID: 482002143}
   m_Layer: 0
   m_Name: RightLowLegCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1477,7 +1529,7 @@ GameObject:
   - 23: {fileID: 525457448}
   m_Layer: 0
   m_Name: BodyCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2030,8 +2082,8 @@ GameObject:
   - 135: {fileID: 738561523}
   - 23: {fileID: 738561522}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: HeadSphere
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2230,7 +2282,7 @@ GameObject:
   - 23: {fileID: 788088384}
   m_Layer: 0
   m_Name: LeftArmCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2444,7 +2496,7 @@ GameObject:
   - 23: {fileID: 847412171}
   m_Layer: 0
   m_Name: LeftUpLegCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2542,7 +2594,7 @@ GameObject:
   - 23: {fileID: 855646808}
   m_Layer: 0
   m_Name: RightUpLegCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2668,7 +2720,7 @@ GameObject:
   - 23: {fileID: 899731787}
   m_Layer: 0
   m_Name: RightFootCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2939,7 +2991,7 @@ GameObject:
   - 23: {fileID: 979054959}
   m_Layer: 0
   m_Name: RightArmCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3064,7 +3116,7 @@ GameObject:
   - 23: {fileID: 994583317}
   m_Layer: 0
   m_Name: RightHandCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3271,7 +3323,7 @@ GameObject:
   - 23: {fileID: 1079046923}
   m_Layer: 0
   m_Name: LeftFootCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3806,7 +3858,7 @@ GameObject:
   - 23: {fileID: 1293412709}
   m_Layer: 0
   m_Name: RightArmCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4440,7 +4492,7 @@ GameObject:
   - 23: {fileID: 1502121700}
   m_Layer: 0
   m_Name: LeftLowLegCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4654,7 +4706,7 @@ GameObject:
   - 23: {fileID: 1580219866}
   m_Layer: 0
   m_Name: RightFootCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4917,7 +4969,7 @@ GameObject:
   - 23: {fileID: 1680371058}
   m_Layer: 0
   m_Name: BodyCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5221,7 +5273,7 @@ GameObject:
   - 23: {fileID: 1742300304}
   m_Layer: 0
   m_Name: RightLowLegCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5293,7 +5345,7 @@ GameObject:
   - 23: {fileID: 1748302266}
   m_Layer: 0
   m_Name: LeftUpLegCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5445,7 +5497,7 @@ GameObject:
   - 23: {fileID: 1780050226}
   m_Layer: 0
   m_Name: LeftHandCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5517,7 +5569,7 @@ GameObject:
   - 23: {fileID: 1795881924}
   m_Layer: 0
   m_Name: LeftHandCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5932,6 +5984,66 @@ Prefab:
       propertyPath: m_TagString
       value: Opponent
       objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100080, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_Name
+      value: HeadSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 100104, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100098, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_TagString
+      value: Player2Collider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 1444483059}
@@ -6005,7 +6117,7 @@ GameObject:
   - 23: {fileID: 1897829517}
   m_Layer: 0
   m_Name: LeftArmCube
-  m_TagString: Untagged
+  m_TagString: Player1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6077,7 +6189,7 @@ GameObject:
   - 23: {fileID: 1908420247}
   m_Layer: 0
   m_Name: RightHandCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6300,7 +6412,7 @@ GameObject:
   - 23: {fileID: 1983881518}
   m_Layer: 0
   m_Name: RightForearmCube
-  m_TagString: Untagged
+  m_TagString: Player2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6534,6 +6646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d0d52a93337d048a7482ac30ade111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _LightBox: {fileID: 625765096}
 --- !u!1 &2004886642
 GameObject:
   m_ObjectHideFlags: 0
