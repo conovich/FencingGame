@@ -5,7 +5,13 @@ public class SwordController : MonoBehaviour {
 	public Transform _MyHilt;
 	public Transform _MyTip;
 	public float rotMagnitude = 10.0f;
-	
+
+	public float rotMaxX;
+	public float rotMaxY;
+	public float rotMinX;
+	public float rotMinY;
+
+	public Vector2 _TipCenter;
 
 
 	float xInput;
@@ -46,9 +52,28 @@ public class SwordController : MonoBehaviour {
 			float thetaY = yInput/swordLength;
 
 			float thetaX = xInput/swordLength;
+			if(tag == "Player1Sword"){
+				Debug.Log(_MyHilt.rotation.eulerAngles.z);
+				//Debug.Log(thetaY);
 
-			_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
-			_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude); //since sword rotated in scene, -global x = local z
+				//capping angles. instead constrain tip position?
+				if((_MyHilt.rotation.eulerAngles.y >= rotMinY && thetaY > 0)){
+					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
+				}
+				else if((_MyHilt.rotation.eulerAngles.y <= rotMaxY && thetaY < 0)){
+					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
+				}
+
+				//since sword rotated in scene, -global x = local z
+				//if((_MyHilt.rotation.eulerAngles.z >= rotMinX && thetaX > 0)){
+					_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude);
+				//}
+				//else if((_MyHilt.rotation.eulerAngles.z <= rotMaxX && thetaX < 0)){
+				//	_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude);
+				//}_
+				Debug.Log(_MyTip.position);
+			}
+
 		}
 		else{
 			ReturnTipToCenter();

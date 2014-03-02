@@ -6,6 +6,8 @@ TagManager:
   - Opponent
   - Player2Collider
   - Player1Collider
+  - Player1Sword
+  - Player2Sword
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

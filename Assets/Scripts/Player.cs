@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 	private Vector3 _currentDistance;
 	private Transform _hips;
 	private Player _thePlayer;
+
+	private bool _opponentOn; //for toggling controller -- whether opponent should move or not
 	
 	public enum State{
 		engarde,
@@ -33,6 +35,8 @@ public class Player : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start (){
+		_opponentOn = true;
+
 		_inStartSequence = true;
 		animation.CrossFadeQueued("ReadyPosition");
 		animation.CrossFadeQueued("Salute 1");
@@ -90,11 +94,11 @@ public class Player : MonoBehaviour {
 		if(!animation.isPlaying){
 			if(Input.GetKey (KeyCode.RightArrow) || Input.GetButtonDown("Right Bumper")){
 				PlayMyAnimation("Advance 1", State.advance);
-				Debug.Log("right bumper");
+				//Debug.Log("right bumper");
 			}
 			else if(Input.GetKey (KeyCode.LeftArrow) || Input.GetButtonDown("Left Bumper")){
 				PlayMyAnimation("Retreat", State.retreat);
-				Debug.Log("left bumper");
+				//Debug.Log("left bumper");
 			}
 			else if(Input.GetKey (KeyCode.Space) || Input.GetButtonDown("A Button")){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
@@ -127,7 +131,10 @@ public class Player : MonoBehaviour {
 	}
 	
 	private void GetInputOpponent(){
-		if(!animation.isPlaying){
+		if(Input.GetButtonDown("Start Button")){
+			_opponentOn = !_opponentOn;
+		}
+		if(!animation.isPlaying && _opponentOn){
 			if(_thePlayer._CurrentState == Player.State.advance){
 				PlayMyAnimation("Retreat", State.retreat);
 			}
