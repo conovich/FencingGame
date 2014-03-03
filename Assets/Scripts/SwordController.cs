@@ -62,45 +62,21 @@ public class SwordController : MonoBehaviour {
 			float ellipseTipValue = ellipseTipValueX + ellipseTipValueY;
 
 			if(tag == "Player1Sword"){
-				Debug.Log(_MyHilt.rotation.eulerAngles.x);
-				//Debug.Log(thetaY);
-
-				//capping angles. instead constrain tip position?
-					/*if((_MyHilt.rotation.eulerAngles.x >= worldRotMinX && worldThetaX > 0)){
-						_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
-					}
-					else if((_MyHilt.rotation.eulerAngles.x <= worldRotMaxX && worldThetaX < 0)){
-						_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
-					}*/
 
 				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
 					_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
-					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //if things are on either side, 
+					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //cap to boundaries -- undo last rot
 						_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
 					}
 				}
 
-				/*if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
-					_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
-					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //if things are on either side, 
+				if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
+					_MyHilt.Rotate(0.0f, worldThetaY*rotMagnitude, 0.0f, Space.World);
+					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //cap to boundaries -- undo last rot 
 						_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
 					}
-				}*/
-				
-				/*
-				if(ellipseTipValue <= 1){
-					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
-					_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude);
-				}*/
+				}
 
-				//if(_MyTip.position.y >= _TipCenter.y + _MaxYDist ){//can only rotate down.
-
-				//}
-
-
-				//since sword rotated in scene, -global x = local z
-					//_MyHilt.Rotate(-thetaY*rotMagnitude, 0.0f, 0.0f, Space.World);
-					//_MyHilt.Rotate(0.0f, thetaX*rotMagnitude, 0.0f, Space.World);
 			}
 
 		}
