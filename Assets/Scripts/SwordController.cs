@@ -6,12 +6,14 @@ public class SwordController : MonoBehaviour {
 	public Transform _MyTip;
 	public float rotMagnitude = 10.0f;
 
-	public float rotMaxX;
-	public float rotMaxY;
-	public float rotMinX;
-	public float rotMinY;
+	public float worldRotMaxX;
+	public float worldRotMaxY;
+	public float worldRotMinX;
+	public float worldRotMinY;
 
 	public Vector2 _TipCenter;
+	public float _MaxXDist;
+	public float _MaxYDist;
 
 
 	float xInput;
@@ -49,29 +51,56 @@ public class SwordController : MonoBehaviour {
 		if(isInput){
 			//sin(theta) = opp/hyp --> y axis = opp, hyp = dist from hilt to tip
 			float swordLength = (_MyHilt.position - _MyTip.position).magnitude;
-			float thetaY = yInput/swordLength;
+			float worldThetaX = yInput/swordLength;
+			float worldThetaY = xInput/swordLength;
 
-			float thetaX = xInput/swordLength;
+
+			//ellipse equation
+			float ellipseTipValueX = Mathf.Pow(_TipCenter.x - _MyTip.position.x, 2)/Mathf.Pow(_MaxXDist,2);
+			float ellipseTipValueY = Mathf.Pow(_TipCenter.y - _MyTip.position.y, 2)/Mathf.Pow(_MaxYDist,2);
+
+			float ellipseTipValue = ellipseTipValueX + ellipseTipValueY;
+
 			if(tag == "Player1Sword"){
-				Debug.Log(_MyHilt.rotation.eulerAngles.z);
+				Debug.Log(_MyHilt.rotation.eulerAngles.x);
 				//Debug.Log(thetaY);
 
 				//capping angles. instead constrain tip position?
-				if((_MyHilt.rotation.eulerAngles.y >= rotMinY && thetaY > 0)){
-					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
-				}
-				else if((_MyHilt.rotation.eulerAngles.y <= rotMaxY && thetaY < 0)){
-					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
+					/*if((_MyHilt.rotation.eulerAngles.x >= worldRotMinX && worldThetaX > 0)){
+						_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					}
+					else if((_MyHilt.rotation.eulerAngles.x <= worldRotMaxX && worldThetaX < 0)){
+						_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					}*/
+
+				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
+					_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //if things are on either side, 
+						_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					}
 				}
 
-				//since sword rotated in scene, -global x = local z
-				//if((_MyHilt.rotation.eulerAngles.z >= rotMinX && thetaX > 0)){
+				/*if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
+					_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
+					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //if things are on either side, 
+						_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
+					}
+				}*/
+				
+				/*
+				if(ellipseTipValue <= 1){
+					_MyHilt.Rotate(0.0f, thetaY*rotMagnitude, 0.0f);
 					_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude);
+				}*/
+
+				//if(_MyTip.position.y >= _TipCenter.y + _MaxYDist ){//can only rotate down.
+
 				//}
-				//else if((_MyHilt.rotation.eulerAngles.z <= rotMaxX && thetaX < 0)){
-				//	_MyHilt.Rotate(0.0f, 0.0f, -thetaX*rotMagnitude);
-				//}_
-				Debug.Log(_MyTip.position);
+
+
+				//since sword rotated in scene, -global x = local z
+					//_MyHilt.Rotate(-thetaY*rotMagnitude, 0.0f, 0.0f, Space.World);
+					//_MyHilt.Rotate(0.0f, thetaX*rotMagnitude, 0.0f, Space.World);
 			}
 
 		}

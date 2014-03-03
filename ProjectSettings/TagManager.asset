@@ -8,6 +8,7 @@ TagManager:
   - Player1Collider
   - Player1Sword
   - Player2Sword
+  - TipConstraint
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
+  User Layer 8: TipCollisionLayer
   User Layer 9: 
   User Layer 10: 
   User Layer 11: 

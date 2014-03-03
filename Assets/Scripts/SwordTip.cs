@@ -18,6 +18,9 @@ public class SwordTip : MonoBehaviour {
 	//not working -- collider and joint 2 not moving/rotating
 	void OnCollisionEnter(Collision collision){
 		Debug.Log("Hit something!");
+		if(collision.collider.tag == "TipConstraint"){
+
+		}
 		if(collision.collider.tag == "Player2Collider"){ //an opponent hit! this needs to be more "if it's player two..." or something more versatile.
 			Debug.Log("Hit player 2!"); //should tell gamestate to update score, lightbox to update lights
 			_LightBoxScript._myLightState = LightBox.LightState.green;
