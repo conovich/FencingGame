@@ -9,6 +9,8 @@ TagManager:
   - Player1Sword
   - Player2Sword
   - TipConstraint
+  - Player1Tip
+  - Player2Tip
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

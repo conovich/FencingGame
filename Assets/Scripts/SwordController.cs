@@ -16,6 +16,9 @@ public class SwordController : MonoBehaviour {
 	public float _MaxYDist;
 
 
+	float currentWorldRotX;
+	float currentWorldRotY;
+
 	float xInput;
 	float yInput;
 
@@ -27,7 +30,7 @@ public class SwordController : MonoBehaviour {
 	void Start () {
 		originalRot = _MyHilt.rotation;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		GetInput();
@@ -64,16 +67,20 @@ public class SwordController : MonoBehaviour {
 			if(tag == "Player1Sword"){
 
 				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
-					_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					//_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+					RotateHiltX(-worldThetaX*rotMagnitude);
 					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //cap to boundaries -- undo last rot
-						_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+						//_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
+						RotateHiltX(worldThetaX*rotMagnitude);
 					}
 				}
 
 				if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
-					_MyHilt.Rotate(0.0f, worldThetaY*rotMagnitude, 0.0f, Space.World);
+					//_MyHilt.Rotate(0.0f, worldThetaY*rotMagnitude, 0.0f, Space.World);
+					RotateHiltY(worldThetaY*rotMagnitude);
 					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //cap to boundaries -- undo last rot 
-						_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
+						//_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
+						RotateHiltY(-worldThetaY*rotMagnitude);
 					}
 				}
 
@@ -85,14 +92,38 @@ public class SwordController : MonoBehaviour {
 		}
 	}
 
+	void RotateHiltX(float angle){
+		_MyHilt.Rotate(angle, 0.0f, 0.0f, Space.World);
+		currentWorldRotX += angle;
+	}
+
+	void RotateHiltY(float angle){
+		_MyHilt.Rotate(0.0f, angle, 0.0f, Space.World);
+		currentWorldRotY += angle;
+	}
+
 	void ReturnTipToCenter(){
-		/*//should LERP next
+		//should LERP next
 
-		Quaternion currentRot = _MyHilt.rotation;
+		/*Quaternion currentRot = _MyHilt.rotation;
 		float deltaThetaY = originalRot.y + currentRot.y;
-		float deltaThetaX = originalRot.x - currentRot.x;
+		float deltaThetaX = originalRot.x - currentRot.x;*/
+		float deltaAngle = 0.2f;
 
-		_MyHilt.Rotate(0.0f, deltaThetaY, 0.0f);*/
+		if(currentWorldRotY > 0){
+			_MyHilt.Rotate(0.0f, -deltaAngle, 0.0f, Space.World);
+		}
+		else if(currentWorldRotY < 0){
+			_MyHilt.Rotate(0.0f, deltaAngle, 0.0f, Space.World);
+		}
+
+		if(currentWorldRotX > 0){
+			_MyHilt.Rotate(-deltaAngle, 0.0f, 0.0f, Space.World);
+		}
+		else if(currentWorldRotX < 0){
+			_MyHilt.Rotate(deltaAngle, 0.0f, 0.0f, Space.World);
+		}
+		
 
 	}
 
