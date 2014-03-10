@@ -111,17 +111,17 @@ public class SwordController : MonoBehaviour {
 		float deltaAngle = 0.2f;
 
 		if(currentWorldRotY > 0){
-			_MyHilt.Rotate(0.0f, -deltaAngle, 0.0f, Space.World);
+			RotateHiltY(-deltaAngle);
 		}
 		else if(currentWorldRotY < 0){
-			_MyHilt.Rotate(0.0f, deltaAngle, 0.0f, Space.World);
+			RotateHiltY(deltaAngle);
 		}
 
 		if(currentWorldRotX > 0){
-			_MyHilt.Rotate(-deltaAngle, 0.0f, 0.0f, Space.World);
+			RotateHiltX(-deltaAngle);
 		}
 		else if(currentWorldRotX < 0){
-			_MyHilt.Rotate(deltaAngle, 0.0f, 0.0f, Space.World);
+			RotateHiltX(deltaAngle);
 		}
 		
 
