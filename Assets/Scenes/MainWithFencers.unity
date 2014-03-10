@@ -4309,8 +4309,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_PrefabInternal: {fileID: 1555237970}
   m_GameObject: {fileID: 1304758107}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -.00174779654, y: -.010519173, z: .0645809397}
+  m_LocalRotation: {x: -.0461302474, y: .885059059, z: -.0363478512, w: .461758971}
+  m_LocalPosition: {x: .0370466113, y: -.00327939959, z: .0783901513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2004790750}
@@ -5091,6 +5091,34 @@ Prefab:
       propertyPath: _JointToFollow
       value: 
       objectReference: {fileID: 1550277406}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.0461302474
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .885059059
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0363478512
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .461758971
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .0370466113
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.00327939959
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .0783901513
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 2004886642}
