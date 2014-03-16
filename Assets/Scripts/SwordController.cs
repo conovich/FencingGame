@@ -130,17 +130,17 @@ public class SwordController : MonoBehaviour {
 	void ReturnTipToCenter(){
 		float deltaAngle = 0.2f;
 
-		if(currentWorldRotY > 0){ 
+		if(currentWorldRotY > 0 + deltaAngle){ 
 			RotateHiltY(-deltaAngle);
 		}
-		else if(currentWorldRotY < 0){
+		else if(currentWorldRotY < 0 - deltaAngle){
 			RotateHiltY(deltaAngle);
 		}
 
-		if(currentWorldRotX > 0){
+		if(currentWorldRotX > 0 + deltaAngle){
 			RotateHiltX(-deltaAngle);
 		}
-		else if(currentWorldRotX < 0){
+		else if(currentWorldRotX < 0 - deltaAngle){
 			RotateHiltX(deltaAngle);
 		}
 		
