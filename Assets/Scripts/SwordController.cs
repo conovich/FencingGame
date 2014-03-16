@@ -26,15 +26,40 @@ public class SwordController : MonoBehaviour {
 
 	Quaternion originalRot;
 
+	Move currentMove;
+
+	public class Move{
+		public Move(){
+
+		}
+
+		public bool isComplete = false;
+		public Vector3 tipStartPos = Vector3.zero;
+		public Vector3 tipLastPos = Vector3.zero;
+		public MoveType currentMove = MoveType.none;
+
+		public enum MoveType{ //add more
+			none,
+			nonrealMove,
+			disengage,
+			parryFour,
+			parrySix,
+			circleFour,
+			circleSix
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		originalRot = _MyHilt.rotation;
+		currentMove = new Move();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		GetInput();
 		RotateJoint(isInput);
+		CheckForMove();
 	}
 
 	void GetInput(){
@@ -103,14 +128,9 @@ public class SwordController : MonoBehaviour {
 	}
 
 	void ReturnTipToCenter(){
-		//should LERP next
-
-		/*Quaternion currentRot = _MyHilt.rotation;
-		float deltaThetaY = originalRot.y + currentRot.y;
-		float deltaThetaX = originalRot.x - currentRot.x;*/
 		float deltaAngle = 0.2f;
 
-		if(currentWorldRotY > 0){
+		if(currentWorldRotY > 0){ 
 			RotateHiltY(-deltaAngle);
 		}
 		else if(currentWorldRotY < 0){
@@ -127,7 +147,32 @@ public class SwordController : MonoBehaviour {
 
 	}
 
+	void CheckForMove(){
+		if(isInput){
+			currentMove.isComplete = false;
+			if(currentMove.tipStartPos == Vector3.zero){ //start of new move!
+				currentMove.tipStartPos = _MyTip.position;
+			}
+			EvaluateMove(); //assign move!
+		}
+		else{ //no more input!
+			if(currentMove.tipStartPos != Vector3.zero){//*just* finished a move
+				//set what move it is here!
+				currentMove.isComplete = true;
+				currentMove.tipStartPos = Vector3.zero;
+			}
+		}
+
+	}
+
+	void EvaluateMove(){ //based on start pos and last pos, can the move be defined?
+
+	}
+
 	void OnCollisionEnter(Collision collision){ //should be for rigidbody collisions -- blade, not tip
 
 	}
+
+
+
 }
