@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class SwordController : MonoBehaviour {
+	public Player _MyPlayer;
+
 	public Transform _MyHilt;
 	public Transform _MyTip;
 	public float rotMagnitude = 10.0f;
@@ -14,7 +16,6 @@ public class SwordController : MonoBehaviour {
 	public Vector2 _TipCenter;
 	public float _MaxXDist;
 	public float _MaxYDist;
-
 
 	float currentWorldRotX;
 	float currentWorldRotY;
@@ -36,7 +37,7 @@ public class SwordController : MonoBehaviour {
 		public bool isComplete = false;
 		public Vector3 tipStartPos = Vector3.zero;
 		public Vector3 tipLastPos = Vector3.zero;
-		public MoveType currentMove = MoveType.none;
+		public MoveType moveType = MoveType.none;
 
 		public enum MoveType{ //add more
 			none,
@@ -46,6 +47,10 @@ public class SwordController : MonoBehaviour {
 			parrySix,
 			circleFour,
 			circleSix
+		}
+
+		public void SetState(Move.MoveType newType){
+			moveType = newType;
 		}
 	}
 
@@ -143,8 +148,6 @@ public class SwordController : MonoBehaviour {
 		else if(currentWorldRotX < 0 - deltaAngle){
 			RotateHiltX(deltaAngle);
 		}
-		
-
 	}
 
 	void CheckForMove(){
@@ -152,21 +155,41 @@ public class SwordController : MonoBehaviour {
 			currentMove.isComplete = false;
 			if(currentMove.tipStartPos == Vector3.zero){ //start of new move!
 				currentMove.tipStartPos = _MyTip.position;
+				currentMove.tipLastPos = _MyTip.position;
 			}
-			EvaluateMove(); //assign move!
+			else{ //if it's not the start of a new move...
+				EvaluateMove(); //assign move!
+			}
 		}
 		else{ //no more input!
 			if(currentMove.tipStartPos != Vector3.zero){//*just* finished a move
 				//set what move it is here!
 				currentMove.isComplete = true;
 				currentMove.tipStartPos = Vector3.zero;
+				currentMove.tipLastPos = Vector3.zero;
 			}
 		}
 
 	}
 
 	void EvaluateMove(){ //based on start pos and last pos, can the move be defined?
+		//currentMove.tipLastPos = _MyTip.position;
+		//parry six
+		if(currentMove.tipLastPos.x > _MyTip.position.x){
+			SetCurrentMoveType(Move.MoveType.parrySix);
+		}
+		else if(currentMove.tipLastPos.x < _MyTip.position.x){
+			SetCurrentMoveType(Move.MoveType.parryFour);
+		}
+		else{
+			SetCurrentMoveType(Move.MoveType.nonrealMove);
+		}
+		currentMove.tipLastPos = _MyTip.position;
+	}
 
+	void SetCurrentMoveType(Move.MoveType newtype){
+		currentMove.SetState(newtype);
+		_MyPlayer.SetMyActionText(currentMove.moveType.ToString());
 	}
 
 	void OnCollisionEnter(Collision collision){ //should be for rigidbody collisions -- blade, not tip

@@ -179,7 +179,7 @@ public class Player : MonoBehaviour {
 
 	void SetState(Player.State newState){
 		_CurrentState = newState;
-		SetMyActionText();
+		//SetMyActionText();
 	}
 
 	void SetAnimState(Player.State newState){
@@ -188,5 +188,9 @@ public class Player : MonoBehaviour {
 
 	void SetMyActionText(){
 		_MyActionText.text = _CurrentState.ToString();
+	}
+
+	public void SetMyActionText(string action){
+		_MyActionText.text = action;
 	}
 }
