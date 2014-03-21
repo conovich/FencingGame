@@ -156,6 +156,7 @@ public class SwordController : MonoBehaviour {
 			if(currentMove.tipStartPos == Vector3.zero){ //start of new move!
 				currentMove.tipStartPos = _MyTip.position;
 				currentMove.tipLastPos = _MyTip.position;
+				SetCurrentMoveType(Move.MoveType.none);
 			}
 			else{ //if it's not the start of a new move...
 				EvaluateMove(); //assign move!
@@ -175,10 +176,13 @@ public class SwordController : MonoBehaviour {
 	void EvaluateMove(){ //based on start pos and last pos, can the move be defined?
 		//currentMove.tipLastPos = _MyTip.position;
 		//parry six
-		if(currentMove.tipLastPos.x > _MyTip.position.x){
+		Debug.Log("X Rot: " + currentWorldRotX);
+		Debug.Log("Y Rot: " + currentWorldRotY);
+
+		if(currentMove.tipLastPos.x > _MyTip.position.x && (Mathf.Abs(currentWorldRotX) < 1.0f)){
 			SetCurrentMoveType(Move.MoveType.parrySix);
 		}
-		else if(currentMove.tipLastPos.x < _MyTip.position.x){
+		else if(currentMove.tipLastPos.x < _MyTip.position.x && (Mathf.Abs(currentWorldRotX) < 1.0f)){
 			SetCurrentMoveType(Move.MoveType.parryFour);
 		}
 		else{

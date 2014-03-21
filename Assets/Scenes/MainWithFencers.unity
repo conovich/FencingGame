@@ -1655,6 +1655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c142812ff910148862e5162a5ec16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyPlayer: {fileID: 1444483063}
   _MyHilt: {fileID: 1260745122}
   _MyTip: {fileID: 821975129}
   rotMagnitude: 125
@@ -2130,6 +2131,14 @@ Prefab:
       propertyPath: _JointToFollow
       value: 
       objectReference: {fileID: 1550277406}
+    - target: {fileID: 6500004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyPlayer
+      value: 
+      objectReference: {fileID: 78145354}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 2004886642}
@@ -5944,6 +5953,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyPlayer
+      value: 
+      objectReference: {fileID: 1444483063}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 529846560}
@@ -7382,6 +7395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c142812ff910148862e5162a5ec16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyPlayer: {fileID: 78145354}
   _MyHilt: {fileID: 1304758108}
   _MyTip: {fileID: 2004790750}
   rotMagnitude: 125
