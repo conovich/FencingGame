@@ -81,6 +81,9 @@ public class Player : MonoBehaviour {
 			if(gameObject.tag == "Player"){
 				GetInputPlayer();	
 			}
+			else if(gameObject.tag == "Player2"){
+				GetInputPlayer2();
+			}
 			else if(gameObject.tag == "Opponent"){
 				GetInputOpponent();
 				if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
@@ -110,7 +113,8 @@ public class Player : MonoBehaviour {
 			/*else if(Input.GetKey (KeyCode.Keypad4)){
 				PlayMyAnimation("ParryFourNoExt", State.lungeRecover);
 			}*/
-			else if(Input.GetKey (KeyCode.W) || Input.GetButtonDown("B Button")){
+
+			/*else if(Input.GetKey (KeyCode.W) || Input.GetButtonDown("B Button")){
 				PlayMyAnimation("ParrySix", State.parrySix);
 			}
 			else if(Input.GetKey (KeyCode.E)){
@@ -118,7 +122,8 @@ public class Player : MonoBehaviour {
 			}
 			else if(Input.GetKey (KeyCode.R) || Input.GetButtonDown("X Button")){
 				PlayMyAnimation("ParrySeven", State.parrySeven);
-			}
+			}*/
+
 			//not working with FENCER
 			/*
 			else if(Input.GetKey (KeyCode.R)){
@@ -128,7 +133,31 @@ public class Player : MonoBehaviour {
 				SetState(State.idle);
 			}
 		}
+	}	
+
+	private void GetInputPlayer2(){
+		if(!animation.isPlaying){
+			if(Input.GetKey (KeyCode.D) || Input.GetButtonDown("Right Bumper 2")){
+				PlayMyAnimation("Advance 1", State.advance);
+				Debug.Log("right bumper");
+			}
+			else if(Input.GetKey (KeyCode.A) || Input.GetButtonDown("Left Bumper 2")){
+				PlayMyAnimation("Retreat", State.retreat);
+				Debug.Log("left bumper");
+			}
+			else if(Input.GetButtonDown("A Button 2")){
+				PlayMyAnimation("LungeRecover", State.lungeRecover);
+			}
+			else if(Input.GetButtonDown("Y Button 2")){
+				PlayMyAnimation("ParryOne", State.parryOne);
+			}
+			else{
+				SetState(State.idle);
+			}
+		}
 	}
+
+
 	
 	private void GetInputOpponent(){
 		if(Input.GetButtonDown("Start Button")){
