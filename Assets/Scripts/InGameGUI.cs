@@ -24,8 +24,26 @@ public class InGameGUI : MonoBehaviour {
 		P1Score.text = "P1: " + GameState.Instance.P1Score;
 		P2Score.text = "P2: " + GameState.Instance.P2Score;
 
-		if(GameState.Instance.debugView_CurrentState == 0){
+		switch(GameState.Instance.debugView_CurrentState){
+		case 0: //inCountdown
 			Countdown();
+			break;
+		case 1: //inPlay
+			if(GUI.Button(new Rect(0, 0, 50, 30), "Pause")){
+				GameState.Instance.SetState(GameState.State.paused);
+				Debug.Log(GameState.Instance.debugView_CurrentState);
+			}
+			break;
+		case 2: //paused
+			if(GUI.Button(new Rect(0, 0, 50, 30), "Play")){
+				GameState.Instance.SetState(GameState.State.inPlay);
+				Debug.Log(GameState.Instance.debugView_CurrentState);
+			}
+			break;
+		case 3: //pointScored
+			break;
+		case 4: //matchOver
+			break;
 		}
 	}
 

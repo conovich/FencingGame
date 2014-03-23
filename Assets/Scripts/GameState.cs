@@ -44,15 +44,34 @@ public class GameState : MonoBehaviour {
 		case State.inCountdown:
 			break;
 		case State.inPlay:
+			UpdatePlay();
 			break;
 		case State.paused:
+			UpdatePaused();
 			break;
 		case State.pointScored:
+			UpdatePointScored();
 			break;
 		case State.matchOver:
 			break;
 		}
 	}
+
+	void UpdatePlay(){
+		Time.timeScale = 1;
+	}
+
+	void UpdatePaused(){
+		Time.timeScale = 0;
+	}
+
+	void UpdatePointScored(){
+		//Should:
+		//1. tell players someone scored.
+		//2. go back to countdown.
+	}
+
+
 
 	public void SetState(State newState){
 		CurrentState = newState;

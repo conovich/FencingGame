@@ -37,11 +37,13 @@ public class SwordTip : MonoBehaviour {
 	void P1HitP2(){
 		GameState.Instance.IncrementP1Score();
 		_LightBoxScript._myLightState = LightBox.LightState.green;
+		GameState.Instance.SetState(GameState.State.pointScored);
 	}
 
 	void P2HitP1(){
 		GameState.Instance.IncrementP2Score();
 		_LightBoxScript._myLightState = LightBox.LightState.red;
+		GameState.Instance.SetState(GameState.State.pointScored);
 	}
 
 
