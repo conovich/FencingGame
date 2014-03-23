@@ -26,13 +26,24 @@ public class SwordTip : MonoBehaviour {
 		}
 		if(collision.collider.tag == "Player2Collider"){ //an opponent hit! this needs to be more "if it's player two..." or something more versatile.
 			Debug.Log("Hit player 2!"); //should tell gamestate to update score, lightbox to update lights
-			_LightBoxScript._myLightState = LightBox.LightState.green;
+			P1HitP2();
 		}
 		else if(collision.collider.tag == "Player1Collider"){
 			Debug.Log("Hit player 1!");
-			_LightBoxScript._myLightState = LightBox.LightState.red;
+			P2HitP1();
 		}
 	}
+
+	void P1HitP2(){
+		GameState.Instance.IncrementP1Score();
+		_LightBoxScript._myLightState = LightBox.LightState.green;
+	}
+
+	void P2HitP1(){
+		GameState.Instance.IncrementP2Score();
+		_LightBoxScript._myLightState = LightBox.LightState.red;
+	}
+
 
 	void GetLightBoxScript(){
 		_LightBoxScript = _LightBox.GetComponent<LightBox>();

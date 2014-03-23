@@ -69,12 +69,13 @@ public class Player : MonoBehaviour {
 			_MyShadow.position = newPos;	
 		}
 		
-		if(!animation.isPlaying){
+		if(!animation.isPlaying && GameState.Instance.CurrentState == GameState.State.inPlay){
 			_inStartSequence = false;
 			SetState(State.idle);
 		}
-		
-		if(!_inStartSequence){
+
+		//refactor so we don't need inStartSequence?
+		if(!_inStartSequence && GameState.Instance.CurrentState == GameState.State.inPlay){
 			_changeInDistance = _hips.position - _MyReference.position;;
 			//Debug.Log("hips: " + _hips.position.ToString());
 			//Debug.Log("MyReferencePosition!: " + _MyReference.position.ToString());
