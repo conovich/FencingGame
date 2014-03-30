@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameOverGUI : MonoBehaviour {
+public class MatchOverGUI : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {

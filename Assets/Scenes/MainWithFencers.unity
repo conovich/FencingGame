@@ -398,7 +398,7 @@ GameObject:
   - 132: {fileID: 41993937}
   - 114: {fileID: 41993936}
   m_Layer: 10
-  m_Name: PlayerAction
+  m_Name: Player1Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1205,7 +1205,7 @@ GameObject:
   - 65: {fileID: 246115432}
   - 23: {fileID: 246115431}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Strip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,7 +2596,7 @@ GameObject:
   - 114: {fileID: 529846564}
   - 54: {fileID: 529846563}
   m_Layer: 0
-  m_Name: swordRigidBindPlayer2
+  m_Name: Player2Sword
   m_TagString: Player2Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3052,12 +3052,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 625765096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.5874176, y: 139.95874, z: 26.7995605}
+  m_LocalPosition: {x: 0, y: -107.997681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641571591}
   - {fileID: 1711700376}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1863273107}
 --- !u!114 &625765098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3398,10 +3398,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650970605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 160.498535, y: -181.480011, z: 302.975403}
+  m_LocalPosition: {x: 121.866058, y: -297.440857, z: 35.1292114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1519009524}
 --- !u!1 &659955118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3570,7 @@ Prefab:
       objectReference: {fileID: 625765096}
     - target: {fileID: 100010, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
       propertyPath: m_Name
-      value: swordRigidBindPlayer
+      value: Player1Sword
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
       propertyPath: _JointToFollow
@@ -5748,92 +5748,6 @@ Transform:
   m_Children:
   - {fileID: 1098503749}
   m_Father: {fileID: 276269987}
---- !u!1 &1130283373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1130283378}
-  - 33: {fileID: 1130283377}
-  - 23: {fileID: 1130283376}
-  - 64: {fileID: 1130283375}
-  - 54: {fileID: 1130283374}
-  m_Layer: 8
-  m_Name: TipCollisionSphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!54 &1130283374
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130283373}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!64 &1130283375
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130283373}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1130283376
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130283373}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1130283377
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130283373}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1130283378
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130283373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.1526012, y: 164.531448, z: 120.196678}
-  m_LocalScale: {x: 96.2767334, y: 154.175568, z: 96.2767334}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1136004465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6947,7 +6861,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
       propertyPath: m_Name
-      value: PlayerAction
+      value: Player1Label
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
       propertyPath: _Target
@@ -7612,31 +7526,32 @@ Prefab:
   m_RootGameObject: {fileID: 1567861578}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1514390782
+--- !u!1 &1519009523
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1514390783}
+  - 4: {fileID: 1519009524}
   m_Layer: 0
-  m_Name: SwordCollisionEllipse
+  m_Name: Debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1514390783
+--- !u!4 &1519009524
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1514390782}
+  m_GameObject: {fileID: 1519009523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.7414589, y: 162.071869, z: 164.340622}
+  m_LocalPosition: {x: 38.6324768, y: 115.960846, z: 267.846191}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 650970607}
   m_Father: {fileID: 0}
 --- !u!1 &1521530145
 GameObject:
@@ -8455,7 +8370,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
       propertyPath: m_Name
-      value: OpponentAction
+      value: Player2Label
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
       propertyPath: _Target
@@ -8583,7 +8498,7 @@ Prefab:
       objectReference: {fileID: 625765096}
     - target: {fileID: 100010, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
       propertyPath: m_Name
-      value: swordRigidBindPlayer2
+      value: Player2Sword
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
       propertyPath: _JointToFollow
@@ -9212,7 +9127,7 @@ GameObject:
   - 132: {fileID: 1841301317}
   - 114: {fileID: 1841301316}
   m_Layer: 10
-  m_Name: OpponentAction
+  m_Name: Player2Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9322,10 +9237,11 @@ Transform:
   m_Children:
   - {fileID: 2125154913}
   - {fileID: 1105896155}
-  - {fileID: 246115434}
   - {fileID: 714442101}
   - {fileID: 1584407587}
+  - {fileID: 246115434}
   - {fileID: 2011104650}
+  - {fileID: 625765097}
   - {fileID: 1801101205}
   - {fileID: 1954687248}
   m_Father: {fileID: 0}
@@ -10207,7 +10123,7 @@ GameObject:
   - 114: {fileID: 2004886646}
   - 54: {fileID: 2004886647}
   m_Layer: 0
-  m_Name: swordRigidBindPlayer
+  m_Name: Player1Sword
   m_TagString: Player1Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10710,7 +10626,7 @@ GameObject:
   - 64: {fileID: 2125154911}
   - 23: {fileID: 2125154910}
   m_Layer: 0
-  m_Name: BigGround
+  m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

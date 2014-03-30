@@ -164,7 +164,7 @@ GameObject:
   - 4: {fileID: 1642298138}
   - 114: {fileID: 1642298139}
   m_Layer: 0
-  m_Name: GameOverGUI
+  m_Name: MatchOverGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

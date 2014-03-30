@@ -59,6 +59,7 @@ public class GameState : MonoBehaviour {
 			UpdateResetPoint ();
 			break;
 		case State.matchOver:
+			UpdateMatchOver();
 			break;
 		}
 	}
@@ -72,13 +73,24 @@ public class GameState : MonoBehaviour {
 	}
 
 	void UpdateResetPoint(){
-		//Should:
-		//1. tell players someone scored. --> happens in pointScored
-			//handled by GUI
-		//2. reset players to engarde lines
-		ResetPlayers();
-		//3. countdown.
-		SetState(State.inCountdown);
+		//check if someone won!
+		if(P1Score == 5 || P2Score == 5){
+			Instance.SetState(State.matchOver);
+		}
+		else{
+			//Should:
+			//1. tell players someone scored. --> happens in pointScored
+				//handled by GUI
+			//2. reset players to engarde lines
+			ResetPlayers();
+			//3. countdown.
+			SetState(State.inCountdown);
+		}
+	}
+
+	void UpdateMatchOver(){
+		//should transition to this instead somehow
+		Application.LoadLevel("MatchOver");
 	}
 
 	void ResetPlayers(){
@@ -102,5 +114,8 @@ public class GameState : MonoBehaviour {
 
 	public void IncrementP2Score(){
 		P2Score++;
+		if(P2Score == 5){
+			SetState(State.matchOver);
+		}
 	}
 }
