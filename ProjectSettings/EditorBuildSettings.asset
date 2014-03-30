@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/MainWithFencers.unity
+  - enabled: 1
+    path: Assets/Scenes/MatchOver.unity

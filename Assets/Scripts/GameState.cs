@@ -8,6 +8,8 @@ public class GameState : MonoBehaviour {
 	public Player Player1;
 	public Player Player2;
 
+	public Timer myTimer;
+
 	private static GameState _instance;
 	public static GameState Instance{
 		get{return _instance;}
@@ -40,6 +42,7 @@ public class GameState : MonoBehaviour {
 
 	void Reset(){
 		ResetScores();
+		myTimer.Set(3, 0);
 	}
 	
 	// Update is called once per frame
@@ -62,10 +65,15 @@ public class GameState : MonoBehaviour {
 			UpdateMatchOver();
 			break;
 		}
+
+		if(CurrentState != State.inPlay){
+			myTimer.StartOrStop(false);
+		}
 	}
 
 	void UpdatePlay(){
 		Time.timeScale = 1;
+		myTimer.StartOrStop(true);
 	}
 
 	void UpdatePaused(){
