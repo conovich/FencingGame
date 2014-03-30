@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
 	public Transform _MyReference;
 
+	public Transform EngardeLine;
 
 	private AnimationState _anim;
 	private bool _inStartSequence;
@@ -35,6 +36,8 @@ public class Player : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start (){
+		ResetToEngardeLine(); 
+
 		_opponentOn = true;
 
 		_inStartSequence = true;
@@ -61,6 +64,35 @@ public class Player : MonoBehaviour {
 		if(_thePlayer == null){
 			Debug.Log("Player not initialized.");	
 		}
+
+
+	}
+
+	public void Reset(){
+		ResetToEngardeLine();
+		_MyReference.position = _hips.position;
+		PlayMyAnimation("EngardePosition", State.engarde);
+
+
+	}
+
+	void ResetToEngardeLine(){
+		Vector3 startingPos = EngardeLine.position;
+		startingPos.y = transform.position.y;
+		startingPos.x = transform.position.x;
+		transform.position = startingPos;
+
+		//_MyReference.position = _hips.position;
+		//_changeInDistance = _hips.position - _MyReference.position;
+		_changeInDistance = new Vector3(0.0f, 0.0f, 0.0f);
+		//_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
+
+		_hips = transform.FindChild("Hips");
+		if(_hips == null){
+			_hips = transform.FindChild("Hips1");
+		}
+		
+		_MyReference.position = _hips.position;
 	}
 	
 	void FixedUpdate (){
@@ -76,7 +108,7 @@ public class Player : MonoBehaviour {
 
 		//refactor so we don't need inStartSequence?
 		if(!_inStartSequence && GameState.Instance.CurrentState == GameState.State.inPlay){
-			_changeInDistance = _hips.position - _MyReference.position;;
+			_changeInDistance = _hips.position - _MyReference.position;
 			//Debug.Log("hips: " + _hips.position.ToString());
 			//Debug.Log("MyReferencePosition!: " + _MyReference.position.ToString());
 			if(gameObject.tag == "Player"){

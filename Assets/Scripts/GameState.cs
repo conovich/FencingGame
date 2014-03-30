@@ -5,6 +5,9 @@ public class GameState : MonoBehaviour {
 	public int P1Score;
 	public int P2Score;
 
+	public Player Player1;
+	public Player Player2;
+
 	private static GameState _instance;
 	public static GameState Instance{
 		get{return _instance;}
@@ -15,7 +18,8 @@ public class GameState : MonoBehaviour {
 		inPlay = 1,
 		paused = 2,
 		pointScored = 3,
-		matchOver = 4
+		matchOver = 4,
+		resetPoint = 5
 	}
 
 	public State CurrentState = State.inCountdown;
@@ -50,7 +54,9 @@ public class GameState : MonoBehaviour {
 			UpdatePaused();
 			break;
 		case State.pointScored:
-			UpdatePointScored();
+			break;
+		case State.resetPoint:
+			UpdateResetPoint ();
 			break;
 		case State.matchOver:
 			break;
@@ -65,13 +71,20 @@ public class GameState : MonoBehaviour {
 		Time.timeScale = 0;
 	}
 
-	void UpdatePointScored(){
+	void UpdateResetPoint(){
 		//Should:
-		//1. tell players someone scored.
-		//2. go back to countdown.
+		//1. tell players someone scored. --> happens in pointScored
+			//handled by GUI
+		//2. reset players to engarde lines
+		ResetPlayers();
+		//3. countdown.
+		SetState(State.inCountdown);
 	}
 
-
+	void ResetPlayers(){
+		Player1.Reset();
+		Player2.Reset();
+	}
 
 	public void SetState(State newState){
 		CurrentState = newState;
