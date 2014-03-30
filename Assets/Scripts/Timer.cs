@@ -12,9 +12,8 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		TimerText.text = "3:00";
-		minutes = 3;
-		seconds = 0;
+		SetTimer(3, 0);
+		SetText();
 		isCounting = false;
 		TimeOut = false;
 	}
@@ -44,6 +43,10 @@ public class Timer : MonoBehaviour {
 				}
 			}
 		}
+		SetText();
+	}
+
+	void SetText(){
 		if(seconds > 9){
 			TimerText.text = minutes.ToString() + ":" + seconds.ToString();
 		}
@@ -61,9 +64,9 @@ public class Timer : MonoBehaviour {
 		}
 	}
 
-	public void Set(int minutes, int seconds){
-		minutes = minutes;
-		seconds = seconds;
+	void SetTimer(int newMinutes, int newSeconds){
+		minutes = newMinutes;
+		seconds = newSeconds;
 		secondCounter = 1.0f;
 		TimeOut = false;
 	}

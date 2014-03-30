@@ -42,7 +42,6 @@ public class GameState : MonoBehaviour {
 
 	void Reset(){
 		ResetScores();
-		myTimer.Set(3, 0);
 	}
 	
 	// Update is called once per frame
@@ -74,6 +73,9 @@ public class GameState : MonoBehaviour {
 	void UpdatePlay(){
 		Time.timeScale = 1;
 		myTimer.StartOrStop(true);
+		if(myTimer.TimeOut){
+			SetState(State.matchOver); //if time runs out, gameover!
+		}
 	}
 
 	void UpdatePaused(){
@@ -83,7 +85,7 @@ public class GameState : MonoBehaviour {
 	void UpdateResetPoint(){
 		//check if someone won!
 		if(P1Score == 5 || P2Score == 5){
-			Instance.SetState(State.matchOver);
+			SetState(State.matchOver);
 		}
 		else{
 			//Should:
