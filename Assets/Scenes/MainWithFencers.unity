@@ -6559,6 +6559,7 @@ GameObject:
   - 124: {fileID: 1285000857}
   - 92: {fileID: 1285000856}
   - 81: {fileID: 1285000855}
+  - 114: {fileID: 1285000860}
   m_Layer: 0
   m_Name: OverShoulderCameraP1
   m_TagString: Untagged
@@ -6627,6 +6628,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1285000860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1285000854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95834d10ef16814d980859618d7c805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1668335300}
+  X: 0
+  Y: 0
+  Z: 1
 --- !u!1 &1293412707
 GameObject:
   m_ObjectHideFlags: 0
