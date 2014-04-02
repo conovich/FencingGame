@@ -1285,7 +1285,7 @@ Transform:
   m_PrefabInternal: {fileID: 1864444314}
   m_GameObject: {fileID: 275414868}
   m_LocalRotation: {x: .0865218341, y: -.701793432, z: .701777875, w: .0866478309}
-  m_LocalPosition: {x: -1.08561122, y: 2.20563555, z: 6.24515438}
+  m_LocalPosition: {x: -1.08561087, y: .429298401, z: 6.24515581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1444483060}
@@ -9446,6 +9446,18 @@ Prefab:
       propertyPath: EngardeLine
       value: 
       objectReference: {fileID: 230441793}
+    - target: {fileID: 400112, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.08561087
+      objectReference: {fileID: 0}
+    - target: {fileID: 400112, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .429298401
+      objectReference: {fileID: 0}
+    - target: {fileID: 400112, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.24515581
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 1444483059}
