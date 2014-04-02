@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XInputDotNetPure;
 
 public class ControllerInput : MonoBehaviour {
 	//controller variables
@@ -20,7 +21,8 @@ public class ControllerInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		GetState1();
+		GetState2();
 	}
 
 	void GetControllers(){

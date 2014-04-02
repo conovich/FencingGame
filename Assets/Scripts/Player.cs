@@ -3,15 +3,7 @@ using System.Collections;
 using XInputDotNetPure;
 
 public class Player : MonoBehaviour {
-	//controller variables
-	bool player1IndexSet = false;
-	bool player2IndexSet = false;
-	PlayerIndex player1Index;
-	PlayerIndex player2Index;
-	GamePadState state1;
-	GamePadState prevState1;
-	GamePadState state2;
-	GamePadState prevState2;
+	public ControllerInput myControllers;
 
 	//public items to be set in inspector
 	public Transform _MyShadow;
@@ -73,8 +65,6 @@ public class Player : MonoBehaviour {
 		if(_thePlayer == null){
 			Debug.Log("Player not initialized.");	
 		}
-
-		GetControllers();
 	}
 
 	public void Reset(){
@@ -102,53 +92,6 @@ public class Player : MonoBehaviour {
 		}
 		
 		_MyReference.position = _hips.position;
-	}
-
-	void GetControllers(){
-		// Find a PlayerIndex, for a single player game
-		// Will find the first controller that is connected and use it
-		if (!player1IndexSet || !prevState1.IsConnected)
-		{
-			for (int i = 0; i < 4; ++i)
-			{
-				PlayerIndex testPlayerIndex = (PlayerIndex)i;
-				GamePadState testState = GamePad.GetState(testPlayerIndex);
-				if (testState.IsConnected)
-				{
-					if(!player1IndexSet){
-						Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
-						player1Index = testPlayerIndex;
-						player1IndexSet = true;
-					}
-				}
-			}
-		}
-
-		if (!player2IndexSet || !prevState2.IsConnected)
-		{
-			for (int i = 0; i < 4; ++i)
-			{
-				PlayerIndex testPlayerIndex = (PlayerIndex)i;
-				GamePadState testState = GamePad.GetState(testPlayerIndex);
-
-				if(testPlayerIndex != player1Index){
-					if (testState.IsConnected)
-					{
-						if(!player2IndexSet){
-							Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
-							player2Index = testPlayerIndex;
-							player2IndexSet = true;
-						}
-					}
-				}
-			}
-		}
-
-		prevState1 = state1;
-		state1 = GamePad.GetState(player1Index);
-
-		prevState2 = state2;
-		state2 = GamePad.GetState(player2Index);
 	}
 
 	void FixedUpdate (){
@@ -183,23 +126,21 @@ public class Player : MonoBehaviour {
 	}
 	
 	private void GetInputPlayer(){
-		prevState1 = state1;
-		state1 = GamePad.GetState(player1Index);
 
 		if(!animation.isPlaying){
 
-			if(Input.GetKey (KeyCode.RightArrow) || (prevState1.Buttons.RightShoulder == ButtonState.Pressed && state1.Buttons.RightShoulder == ButtonState.Released)){
+			if(Input.GetKey (KeyCode.RightArrow) || (myControllers.prevState1.Buttons.RightShoulder == ButtonState.Pressed && myControllers.state1.Buttons.RightShoulder == ButtonState.Released)){
 				PlayMyAnimation("Advance 1", State.advance);
 				//Debug.Log("right bumper");
 			}
-			else if(Input.GetKey (KeyCode.LeftArrow) || (prevState1.Buttons.LeftShoulder == ButtonState.Pressed && state1.Buttons.LeftShoulder == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.LeftArrow) || (myControllers.prevState1.Buttons.LeftShoulder == ButtonState.Pressed && myControllers.state1.Buttons.LeftShoulder == ButtonState.Released)){
 				PlayMyAnimation("Retreat", State.retreat);
 				//Debug.Log("left bumper");
 			}
-			else if(Input.GetKey (KeyCode.Space) || (prevState1.Buttons.A == ButtonState.Pressed && state1.Buttons.A == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.Space) || (myControllers.prevState1.Buttons.A == ButtonState.Pressed && myControllers.state1.Buttons.A == ButtonState.Released)){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
 			}
-			else if(Input.GetKey (KeyCode.Q) || (prevState1.Buttons.Y == ButtonState.Pressed && state1.Buttons.Y == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.Q) || (myControllers.prevState1.Buttons.Y == ButtonState.Pressed && myControllers.state1.Buttons.Y == ButtonState.Released)){
 				PlayMyAnimation("ParryOne", State.parryOne);
 			}
 
@@ -231,22 +172,20 @@ public class Player : MonoBehaviour {
 	}	
 
 	private void GetInputPlayer2(){
-		prevState2 = state2;
-		state2 = GamePad.GetState(player2Index);
 
 		if(!animation.isPlaying){
-			if(Input.GetKey (KeyCode.D) || (prevState2.Buttons.RightShoulder == ButtonState.Pressed && state2.Buttons.RightShoulder == ButtonState.Released)){
+			if(Input.GetKey (KeyCode.D) || (myControllers.prevState2.Buttons.LeftShoulder == ButtonState.Pressed && myControllers.state2.Buttons.LeftShoulder == ButtonState.Released)){
 				PlayMyAnimation("Advance 1", State.advance);
 				Debug.Log("right bumper");
 			}
-			else if(Input.GetKey (KeyCode.A) || (prevState2.Buttons.LeftShoulder == ButtonState.Pressed && state2.Buttons.LeftShoulder == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.A) || (myControllers.prevState2.Buttons.RightShoulder == ButtonState.Pressed && myControllers.state2.Buttons.RightShoulder == ButtonState.Released)){
 				PlayMyAnimation("Retreat", State.retreat);
 				Debug.Log("left bumper");
 			}
-			else if((prevState2.Buttons.A == ButtonState.Pressed && state2.Buttons.A == ButtonState.Released)){
+			else if((myControllers.prevState2.Buttons.A == ButtonState.Pressed && myControllers.state2.Buttons.A == ButtonState.Released)){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
 			}
-			else if((prevState2.Buttons.Y == ButtonState.Pressed && state2.Buttons.Y == ButtonState.Released)){
+			else if((myControllers.prevState2.Buttons.Y == ButtonState.Pressed && myControllers.state2.Buttons.Y == ButtonState.Released)){
 				PlayMyAnimation("ParryOne", State.parryOne);
 			}
 			else{
