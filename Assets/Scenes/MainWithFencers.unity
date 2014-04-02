@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0501ec8303ef8c74683c4d2c3cc87436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyControllers: {fileID: 1567861581}
   _MyShadow: {fileID: 2012302516}
   _MyActionText: {fileID: 41993937}
   _MyReference: {fileID: 1192361105}
@@ -1005,6 +1006,14 @@ Prefab:
       propertyPath: EngardeLine
       value: 
       objectReference: {fileID: 2125413326}
+    - target: {fileID: 11400000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: myControllers
+      value: 
+      objectReference: {fileID: 1567861581}
+    - target: {fileID: 11400000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: _MyControllers
+      value: 
+      objectReference: {fileID: 1567861581}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 78145351}
@@ -2643,6 +2652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c142812ff910148862e5162a5ec16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyControllers: {fileID: 1567861581}
   _MyPlayer: {fileID: 1444483063}
   _MyHilt: {fileID: 1260745122}
   _MyTip: {fileID: 821975129}
@@ -2996,6 +3006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0501ec8303ef8c74683c4d2c3cc87436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyControllers: {fileID: 0}
   _MyShadow: {fileID: 1306012498}
   _MyActionText: {fileID: 1841301317}
   _MyReference: {fileID: 310637020}
@@ -3584,6 +3595,14 @@ Prefab:
       propertyPath: _MyPlayer
       value: 
       objectReference: {fileID: 78145354}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: myControllers
+      value: 
+      objectReference: {fileID: 1567861581}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyControllers
+      value: 
+      objectReference: {fileID: 1567861581}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 2004886642}
@@ -7352,6 +7371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0501ec8303ef8c74683c4d2c3cc87436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyControllers: {fileID: 1567861581}
   _MyShadow: {fileID: 275414869}
   _MyActionText: {fileID: 1841301317}
   _MyReference: {fileID: 1194058339}
@@ -7774,6 +7794,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1567861580}
   - 114: {fileID: 1567861579}
+  - 114: {fileID: 1567861581}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -7810,6 +7831,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1567861581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1567861578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66faf1e422df66f4b9288bf64bed321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1580219864
 GameObject:
   m_ObjectHideFlags: 0
@@ -8622,6 +8654,14 @@ Prefab:
       propertyPath: _MyPlayer
       value: 
       objectReference: {fileID: 1444483063}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: myControllers
+      value: 
+      objectReference: {fileID: 1567861581}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyControllers
+      value: 
+      objectReference: {fileID: 1567861581}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 529846560}
@@ -9458,6 +9498,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 6.24515581
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: myControllers
+      value: 
+      objectReference: {fileID: 1567861581}
+    - target: {fileID: 11400000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+      propertyPath: _MyControllers
+      value: 
+      objectReference: {fileID: 1567861581}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 1444483059}
@@ -10259,6 +10307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c142812ff910148862e5162a5ec16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyControllers: {fileID: 1567861581}
   _MyPlayer: {fileID: 78145354}
   _MyHilt: {fileID: 1304758108}
   _MyTip: {fileID: 2004790750}

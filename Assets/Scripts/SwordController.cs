@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SwordController : MonoBehaviour {
+	public ControllerInput _MyControllers;
+
 	public Player _MyPlayer;
 
 	public Transform _MyHilt;
@@ -70,13 +72,25 @@ public class SwordController : MonoBehaviour {
 	void GetInput(){
 		isInput = false;
 
-		if(Input.GetAxis("X Axis") != 0){
-			xInput = Input.GetAxis("X Axis");
-			isInput = true;
+		if(gameObject.tag == "Player1Sword"){
+			if(_MyControllers.state1.ThumbSticks.Left.X != 0){
+				xInput = _MyControllers.state1.ThumbSticks.Left.X;
+				isInput = true;
+			}
+			if(_MyControllers.state1.ThumbSticks.Left.Y != 0){
+				yInput = -_MyControllers.state1.ThumbSticks.Left.Y;
+				isInput = true;
+			}
 		}
-		if(Input.GetAxis("Y Axis") != 0){
-			yInput = Input.GetAxis("Y Axis");
-			isInput = true;
+		else if(gameObject.tag == "Player2Sword"){ 
+			if(_MyControllers.state2.ThumbSticks.Left.X != 0){
+				xInput = -_MyControllers.state2.ThumbSticks.Left.X; //NEGATIVE ONLY FOR DEMO SINGLE PLAYER CAMERA
+				isInput = true;
+			}
+			if(_MyControllers.state2.ThumbSticks.Left.Y != 0){
+				yInput = _MyControllers.state2.ThumbSticks.Left.Y;
+				isInput = true;
+			}
 		}
 	}
 
@@ -88,13 +102,7 @@ public class SwordController : MonoBehaviour {
 			float worldThetaY = xInput/swordLength;
 
 
-			//ellipse equation
-			float ellipseTipValueX = Mathf.Pow(_TipCenter.x - _MyTip.position.x, 2)/Mathf.Pow(_MaxXDist,2);
-			float ellipseTipValueY = Mathf.Pow(_TipCenter.y - _MyTip.position.y, 2)/Mathf.Pow(_MaxYDist,2);
-
-			float ellipseTipValue = ellipseTipValueX + ellipseTipValueY;
-
-			if(tag == "Player1Sword"){
+			//if(tag == "Player1Sword"){
 
 				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
 					//_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
@@ -114,7 +122,7 @@ public class SwordController : MonoBehaviour {
 					}
 				}
 
-			}
+			//}
 
 		}
 		else{

@@ -3,7 +3,7 @@ using System.Collections;
 using XInputDotNetPure;
 
 public class Player : MonoBehaviour {
-	public ControllerInput myControllers;
+	public ControllerInput _MyControllers;
 
 	//public items to be set in inspector
 	public Transform _MyShadow;
@@ -129,18 +129,18 @@ public class Player : MonoBehaviour {
 
 		if(!animation.isPlaying){
 
-			if(Input.GetKey (KeyCode.RightArrow) || (myControllers.prevState1.Buttons.RightShoulder == ButtonState.Pressed && myControllers.state1.Buttons.RightShoulder == ButtonState.Released)){
+			if(Input.GetKey (KeyCode.RightArrow) || (_MyControllers.prevState1.Buttons.RightShoulder == ButtonState.Pressed && _MyControllers.state1.Buttons.RightShoulder == ButtonState.Released)){
 				PlayMyAnimation("Advance 1", State.advance);
 				//Debug.Log("right bumper");
 			}
-			else if(Input.GetKey (KeyCode.LeftArrow) || (myControllers.prevState1.Buttons.LeftShoulder == ButtonState.Pressed && myControllers.state1.Buttons.LeftShoulder == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.LeftArrow) || (_MyControllers.prevState1.Buttons.LeftShoulder == ButtonState.Pressed && _MyControllers.state1.Buttons.LeftShoulder == ButtonState.Released)){
 				PlayMyAnimation("Retreat", State.retreat);
 				//Debug.Log("left bumper");
 			}
-			else if(Input.GetKey (KeyCode.Space) || (myControllers.prevState1.Buttons.A == ButtonState.Pressed && myControllers.state1.Buttons.A == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.Space) || (_MyControllers.prevState1.Buttons.A == ButtonState.Pressed && _MyControllers.state1.Buttons.A == ButtonState.Released)){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
 			}
-			else if(Input.GetKey (KeyCode.Q) || (myControllers.prevState1.Buttons.Y == ButtonState.Pressed && myControllers.state1.Buttons.Y == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.Q) || (_MyControllers.prevState1.Buttons.Y == ButtonState.Pressed && _MyControllers.state1.Buttons.Y == ButtonState.Released)){
 				PlayMyAnimation("ParryOne", State.parryOne);
 			}
 
@@ -174,18 +174,18 @@ public class Player : MonoBehaviour {
 	private void GetInputPlayer2(){
 
 		if(!animation.isPlaying){
-			if(Input.GetKey (KeyCode.D) || (myControllers.prevState2.Buttons.LeftShoulder == ButtonState.Pressed && myControllers.state2.Buttons.LeftShoulder == ButtonState.Released)){
+			if(Input.GetKey (KeyCode.D) || (_MyControllers.prevState2.Buttons.LeftShoulder == ButtonState.Pressed && _MyControllers.state2.Buttons.LeftShoulder == ButtonState.Released)){
 				PlayMyAnimation("Advance 1", State.advance);
 				Debug.Log("right bumper");
 			}
-			else if(Input.GetKey (KeyCode.A) || (myControllers.prevState2.Buttons.RightShoulder == ButtonState.Pressed && myControllers.state2.Buttons.RightShoulder == ButtonState.Released)){
+			else if(Input.GetKey (KeyCode.A) || (_MyControllers.prevState2.Buttons.RightShoulder == ButtonState.Pressed && _MyControllers.state2.Buttons.RightShoulder == ButtonState.Released)){
 				PlayMyAnimation("Retreat", State.retreat);
 				Debug.Log("left bumper");
 			}
-			else if((myControllers.prevState2.Buttons.A == ButtonState.Pressed && myControllers.state2.Buttons.A == ButtonState.Released)){
+			else if((_MyControllers.prevState2.Buttons.A == ButtonState.Pressed && _MyControllers.state2.Buttons.A == ButtonState.Released)){
 				PlayMyAnimation("LungeRecover", State.lungeRecover);
 			}
-			else if((myControllers.prevState2.Buttons.Y == ButtonState.Pressed && myControllers.state2.Buttons.Y == ButtonState.Released)){
+			else if((_MyControllers.prevState2.Buttons.Y == ButtonState.Pressed && _MyControllers.state2.Buttons.Y == ButtonState.Released)){
 				PlayMyAnimation("ParryOne", State.parryOne);
 			}
 			else{
