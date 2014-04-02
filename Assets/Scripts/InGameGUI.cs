@@ -38,11 +38,19 @@ public class InGameGUI : MonoBehaviour {
 				GameState.Instance.SetState(GameState.State.paused);
 				Debug.Log(GameState.Instance.debugView_CurrentState);
 			}
+
+			if(GUI.Button(new Rect(60, 0, 60, 30), "Restart")){ //in play reset button
+				Application.LoadLevel("MainMenu");
+			}
 			break;
 		case 2: //paused
 			if(GUI.Button(new Rect(0, 0, 50, 30), "Play")){
 				GameState.Instance.SetState(GameState.State.inPlay);
 				Debug.Log(GameState.Instance.debugView_CurrentState);
+			}
+
+			if(GUI.Button(new Rect(60, 0, 60, 30), "Restart")){ //pause reset button
+				Application.LoadLevel("MainMenu");
 			}
 			break;
 		case 3: //pointScored
