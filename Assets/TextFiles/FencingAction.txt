@@ -1,0 +1,14 @@
+advance
+retreat
+lunge recover
+extend
+parry six
+parry four
+parry seven
+parry eight
+circle six
+circle four
+disengage in
+disengage out
+one two in out
+one two out in

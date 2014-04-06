@@ -1,0 +1,18 @@
+advance,advance,retreat,double advance,double retreat,lunge recover outside,extend
+retreat,advance,retreat,double advance,double retreat,lunge recover outside
+double advance,advance,retreat,double advance,double retreat
+double retreat,advance,retreat,double advance,double retreat,parry six,parry four,parry seven,parry eight
+lunge recover inside,advance,retreat,double advance,double retreat,parry four,circle six,parry eight
+lunge recover outside,advance,retreat,double advance,double retreat,parry six,circle four,parry seven
+extend inside,advance,retreat,parry four,circle six,parry eight
+extend outside,advance,retreat,parry six,circle four,parry seven
+parry six,advance,retreat,parry six,circle four,parry seven,disengage outside
+parry four,advance,retreat,parry four,circle six,parry eight,disengage inside
+parry seven,advance,retreat,disengage inside
+parry eight,advance,retreat,disengage outside
+circle six,advance,retreat,parry six,circle four,parry seven
+circle four,advance,retreat,circle six,parry eight,disengage inside
+disengage in,advance,retreat,parry four,circle six,parry eight
+disengage out,advance,retreat,parry six,circle four,parry seven
+one two in out,advance,retreat,parry six,circle four,parry seven
+one two out in,advance,retreat,parry four,circle six,parry eight

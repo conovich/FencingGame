@@ -6,36 +6,84 @@ public class PlayerInput : MonoBehaviour {
 	public string actionString;
 
 	public GUIText actionLabel;
+	public GUIText swordStateLabel;
+	public GUIText distanceLabel;
+		
+	public bool swordIsOutside;
+	public int distance;
 
 	// Use this for initialization
 	void Start () {
-	
+		swordIsOutside = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		actionLabel.text = actionString;
+
+		if(swordIsOutside){
+			swordStateLabel.text = "Sword Outside";
+		}
+		else{
+			swordStateLabel.text = "Sword Inside";
+		}
+
 	}
 
 	void OnGUI(){
 		int buttonHeight = 30;
 		int buttonWidth = 60;
 
+		int row = 1;
 		int numButton = 0;
-		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight, buttonWidth, buttonHeight), "engarde")){
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "engarde")){
 			actionString = "engarde";
 		}
 		numButton++;
-		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight, buttonWidth, buttonHeight), "lunge")){
-			actionString = "lunge";
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "lungeRec")){
+			actionString = "lunge recover";
 		}
 		numButton++;
-		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight, buttonWidth, buttonHeight), "parry 6")){
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "parry 6")){
 			actionString = "parry 6";
 		}
 		numButton++;
-		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight, buttonWidth, buttonHeight), "parry 4")){
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "parry 4")){
 			actionString = "parry 4";
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "dis. cw")){
+			actionString = "disengage cw";
+			if(swordIsOutside){
+				swordIsOutside = false;
+			}
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "dis. ccw")){
+			actionString = "disengage ccw";
+			if(!swordIsOutside){
+				swordIsOutside = true;
+			}
+		}
+
+		row++;
+		numButton = 0;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "circle 4")){
+			actionString = "circle 4";
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "circle 4")){
+			actionString = "circle 6";
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "advance")){
+			actionString = "advance";
+			distance--;
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "retreat")){
+			actionString = "retreat6";
+			distance++;
 		}
 
 
