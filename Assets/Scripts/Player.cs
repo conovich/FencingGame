@@ -84,7 +84,11 @@ public class Player : MonoBehaviour {
 		//_MyReference.position = _hips.position;
 		//_changeInDistance = _hips.position - _MyReference.position;
 		_changeInDistance = new Vector3(0.0f, 0.0f, 0.0f);
-		//_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
+
+		//to reset or not to reset?
+		_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
+
+
 
 		_hips = transform.FindChild("Hips");
 		if(_hips == null){
