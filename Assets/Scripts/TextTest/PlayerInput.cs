@@ -45,22 +45,24 @@ public class PlayerInput : MonoBehaviour {
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "parry 6")){
-			actionString = "parry 6";
+			actionString = "parry six";
+			swordIsOutside = false;
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "parry 4")){
-			actionString = "parry 4";
+			actionString = "parry four";
+			swordIsOutside = true;
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "dis. cw")){
-			actionString = "disengage cw";
+			actionString = "disengage in";
 			if(swordIsOutside){
 				swordIsOutside = false;
 			}
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "dis. ccw")){
-			actionString = "disengage ccw";
+			actionString = "disengage out";
 			if(!swordIsOutside){
 				swordIsOutside = true;
 			}
@@ -69,11 +71,13 @@ public class PlayerInput : MonoBehaviour {
 		row++;
 		numButton = 0;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "circle 4")){
-			actionString = "circle 4";
+			actionString = "circle four";
+			swordIsOutside = true;
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "circle 4")){
-			actionString = "circle 6";
+			actionString = "circle six";
+			swordIsOutside = false;
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "advance")){
@@ -82,8 +86,18 @@ public class PlayerInput : MonoBehaviour {
 		}
 		numButton++;
 		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "retreat")){
-			actionString = "retreat6";
+			actionString = "retreat";
 			distance++;
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "advance")){
+			actionString = "double advance";
+			distance-=2;
+		}
+		numButton++;
+		if(GUI.Button(new Rect(10 + numButton*buttonWidth, Screen.height - buttonHeight*row, buttonWidth, buttonHeight), "retreat")){
+			actionString = "double retreat";
+			distance+=2;
 		}
 
 

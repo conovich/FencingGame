@@ -9,6 +9,9 @@ public class TextAI : MonoBehaviour {
 	public List<Action> MotherList;
 	public TextAsset ActionResponseText;
 
+	public GUIText myResponse;
+
+	private string oldPlayerAction;
 
 
 	public class Action{
@@ -28,12 +31,15 @@ public class TextAI : MonoBehaviour {
 	void Start () {
 		InstantiateMotherList();
 		Debug.Log("startinggggg");
+		oldPlayerAction = myPlayer.actionString;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		IsInMotherList("hi");
-		ParsePlayerAction();
+		IsInMotherList("hi");//debug
+		if(oldPlayerAction != myPlayer.actionString){ //if the player action has changed... oldplayeraction gets set in ParsePlayerAction()
+			ParsePlayerAction();
+		}
 	}
 
 	bool IsInMotherList(string name){
@@ -91,23 +97,54 @@ public class TextAI : MonoBehaviour {
 	}
 	
 	void ParsePlayerAction(){
+		oldPlayerAction = myPlayer.actionString;
 		switch (myPlayer.actionString){
 		case "engarde":
+			myResponse.text = "engarde";
 			break;
 		case "lunge recover":
+			//check inside or outside
+			if(myPlayer.swordIsOutside){
+				SelectResponse("lunge recover outside");
+			}
+			else{
+				SelectResponse("lunge recover inside");
+			}	
 			break;
-		case "parry 6":
+		case "extend":
+			//check inside or outside
+			if(myPlayer.swordIsOutside){
+				SelectResponse("extend outside");
+			}
+			else{
+				SelectResponse("extend inside");
+			}
 			break;
-		case "parry 4":
+		case "parry six":
+			SelectResponse(myPlayer.actionString);
 			break;
-		case "disengage cw":
+		case "parry four":
+			SelectResponse(myPlayer.actionString);
 			break;
-		case "disengage ccw":
+		case "disengage in":
+			SelectResponse(myPlayer.actionString);
 			break;
-		case "circle 4":
+		case "disengage out":
+			SelectResponse(myPlayer.actionString);
 			break;
-		case "circle 6":
+		case "circle four":
+			SelectResponse(myPlayer.actionString);
+			break;
+		case "circle six":
+			SelectResponse(myPlayer.actionString);
 			break;
 		}
+	}
+
+	void SelectResponse(string playerActionString){
+		Action playerAction = FindInMotherList(playerActionString);
+		int random = Random.Range(0, playerAction._PossibilitySpace.Count);
+		//Debug.Log(playerAction._PossibilitySpace[random]);
+		myResponse.text = playerAction._PossibilitySpace[random].name;
 	}
 }
