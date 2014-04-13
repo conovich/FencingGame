@@ -10,10 +10,20 @@ public class GameState : MonoBehaviour {
 
 	public Timer myTimer;
 
+
+
 	private static GameState _instance;
 	public static GameState Instance{
 		get{return _instance;}
 	}
+
+	public enum PlayerSelection{
+		singlePlayer,
+		multiplayer
+	}
+
+	//should be toggle-able in the main menu!!
+	public PlayerSelection playerSelection = PlayerSelection.multiplayer;
 
 	public enum State{
 		inCountdown = 0,
@@ -21,10 +31,11 @@ public class GameState : MonoBehaviour {
 		paused = 2,
 		pointScored = 3,
 		matchOver = 4,
-		resetPoint = 5
+		resetPoint = 5,
+		mainMenu = 6 //yeah, weird, i know.
 	}
 
-	public State CurrentState = State.inCountdown;
+	public State CurrentState = State.mainMenu;
 	public int debugView_CurrentState {get {return (int) CurrentState; }}
 
 	void Awake(){
@@ -63,9 +74,12 @@ public class GameState : MonoBehaviour {
 		case State.matchOver:
 			UpdateMatchOver();
 			break;
+		case State.mainMenu:
+			break;
 		}
+		Debug.Log (CurrentState);
 
-		if(CurrentState != State.inPlay){
+		if(CurrentState != State.inPlay && myTimer != null){
 			myTimer.StartOrStop(false);
 		}
 	}

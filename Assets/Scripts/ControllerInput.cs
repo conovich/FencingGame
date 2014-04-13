@@ -22,7 +22,9 @@ public class ControllerInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GetState1();
-		GetState2();
+		if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+			GetState2();
+		}
 	}
 
 	void GetControllers(){
@@ -45,7 +47,7 @@ public class ControllerInput : MonoBehaviour {
 			}
 		}
 		
-		if (!player2IndexSet || !prevState2.IsConnected)
+		if ((!player2IndexSet || !prevState2.IsConnected) && GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer)
 		{
 			for (int i = 0; i < 4; ++i)
 			{
@@ -67,9 +69,11 @@ public class ControllerInput : MonoBehaviour {
 		
 		prevState1 = state1;
 		state1 = GamePad.GetState(player1Index);
-		
-		prevState2 = state2;
-		state2 = GamePad.GetState(player2Index);
+
+		if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+			prevState2 = state2;
+			state2 = GamePad.GetState(player2Index);
+		}
 	}
 
 	public void GetState1(){
