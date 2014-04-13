@@ -118,14 +118,22 @@ public class Player : MonoBehaviour {
 				GetInputPlayer();	
 			}
 			else if(gameObject.tag == "Player2"){
-				GetInputPlayer2();
+				if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+					GetInputPlayer2();
+				}
+				else{
+					GetInputOpponent();
+					if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
+						PlayMyAnimation("Advance 1", State.advance);	
+					}
+				}
 			}
-			else if(gameObject.tag == "Opponent"){
+			/*else if(gameObject.tag == "Opponent"){
 				GetInputOpponent();
 				if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
 					PlayMyAnimation("Advance 1", State.advance);	
 				}
-			}
+			}*/
 		}
 	}
 	

@@ -23,7 +23,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	//should be toggle-able in the main menu!!
-	public PlayerSelection playerSelection = PlayerSelection.multiplayer;
+	public PlayerSelection playerSelection;
 
 	public enum State{
 		inCountdown = 0,
@@ -49,6 +49,9 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Reset ();
+		if(playerSelection == null){
+			playerSelection = PlayerSelection.singlePlayer;
+		}
 	}
 
 	void Reset(){
