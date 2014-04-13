@@ -67,11 +67,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	public void Reset(){
-		ResetToEngardeLine();
+	public void ResetScene(){
+		//ResetToEngardeLine();
 		_MyReference.position = _hips.position;
 		PlayMyAnimation("EngardePosition", State.engarde);
 
+		Application.LoadLevel(Application.loadedLevel);
 
 	}
 
@@ -83,19 +84,23 @@ public class Player : MonoBehaviour {
 
 		//_MyReference.position = _hips.position;
 		//_changeInDistance = _hips.position - _MyReference.position;
-		_changeInDistance = new Vector3(0.0f, 0.0f, 0.0f);
+		//_changeInDistance = new Vector3(0.0f, 0.0f, 0.0f);
 
 		//to reset or not to reset?
-		_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
+		//if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+		if(tag == "Player" && GameState.Instance.playerSelection == GameState.PlayerSelection.singlePlayer){
+			//_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
+		}
+		//}
+		
 
 
-
-		_hips = transform.FindChild("Hips");
+		/*_hips = transform.FindChild("Hips");
 		if(_hips == null){
 			_hips = transform.FindChild("Hips1");
 		}
 		
-		_MyReference.position = _hips.position;
+		_MyReference.position = _hips.position;*/
 	}
 
 	void FixedUpdate (){
@@ -123,17 +128,11 @@ public class Player : MonoBehaviour {
 				}
 				else{
 					GetInputOpponent();
-					if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
-						PlayMyAnimation("Advance 1", State.advance);	
-					}
+					//if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
+					//	PlayMyAnimation("Advance 1", State.advance);	
+					//}
 				}
 			}
-			/*else if(gameObject.tag == "Opponent"){
-				GetInputOpponent();
-				if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
-					PlayMyAnimation("Advance 1", State.advance);	
-				}
-			}*/
 		}
 	}
 	
@@ -209,11 +208,14 @@ public class Player : MonoBehaviour {
 
 	
 	private void GetInputOpponent(){
-		if(Input.GetButtonDown("Start Button")){
+		//FIX this check! use P1 controller state now, not unity input.
+		if(_MyControllers.prevState1.Buttons.B == ButtonState.Pressed && _MyControllers.state1.Buttons.B == ButtonState.Released){
+			Debug.Log("Opponent Moving?" + _opponentOn);
 			_opponentOn = !_opponentOn;
 		}
 		if(!animation.isPlaying && _opponentOn){
-			if(_thePlayer._CurrentState == Player.State.advance){
+			PlayMyAnimation("Advance 1", State.advance);
+			/*if(_thePlayer._CurrentState == Player.State.advance){
 				PlayMyAnimation("Retreat", State.retreat);
 			}
 			else if(_thePlayer._CurrentState == Player.State.retreat){
@@ -224,7 +226,7 @@ public class Player : MonoBehaviour {
 			}
 			else if(_thePlayer._CurrentState == Player.State.idle){
 				
-			}
+			}*/
 		}
 	}
 	

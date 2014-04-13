@@ -20,6 +20,7 @@ public class MainMenuGUI : MonoBehaviour {
 		if(GUI.Button(new Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - buttonHeight/2, buttonWidth, buttonHeight), "START MATCH")){
 			Application.LoadLevel("MainWithFencers");
 			GameState.Instance.SetState(GameState.State.inCountdown);
+			GameState.resetAllInPlay = true;
 		}
 		//make multiplayer vs single player toggle here, to set gamestate's playerselection enum 
 		if(GUI.Toggle(new Rect(10, 40, 120, 20), isSingleplayer, "Single Player")){

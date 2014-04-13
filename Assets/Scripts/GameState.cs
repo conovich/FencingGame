@@ -2,8 +2,10 @@
 using System.Collections;
 
 public class GameState : MonoBehaviour {
-	public int P1Score;
-	public int P2Score;
+	public static bool resetAllInPlay = false;
+
+	public static int P1Score;
+	public static int P2Score;
 
 	public Player Player1;
 	public Player Player2;
@@ -22,7 +24,7 @@ public class GameState : MonoBehaviour {
 		multiplayer
 	}
 
-	//should be toggle-able in the main menu!!
+	//toggle-able in the main menu!!
 	public PlayerSelection playerSelection;
 
 	public enum State{
@@ -48,18 +50,25 @@ public class GameState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Reset ();
-		if(playerSelection == null){
-			playerSelection = PlayerSelection.singlePlayer;
-		}
+		
 	}
 
-	void Reset(){
+	public void Reset(){
 		ResetScores();
+		if(myTimer){
+			myTimer.ResetTimer();
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(Application.loadedLevel == 1){
+			if(resetAllInPlay){
+				Reset ();
+				resetAllInPlay = false;
+			}
+		}
+
 		switch (CurrentState){
 		case State.inCountdown:
 			break;
@@ -120,9 +129,10 @@ public class GameState : MonoBehaviour {
 		Application.LoadLevel("MatchOver");
 	}
 
+	//Should change this to a reload scene perhaps? That's all Player1.reset does right now...
 	void ResetPlayers(){
-		Player1.Reset();
-		Player2.Reset();
+		Player1.ResetScene();
+		//Player2.Reset();
 	}
 
 	public void SetState(State newState){

@@ -5,13 +5,29 @@ public class Timer : MonoBehaviour {
 	public GUIText TimerText;
 	public bool TimeOut;
 
-	int minutes;
-	int seconds;
+	public int DefaultMinutes = 3;
+	public int DefaultSeconds = 0;
+
+	public static int minutes = 3;
+	public static int seconds = 0;
 	float secondCounter = 1.0f;
 	bool isCounting;
 
 	// Use this for initialization
 	void Start () {
+		if(TimerText == null){
+			TimerText = (GameObject.FindGameObjectWithTag("TimerText")).guiText;
+			if(TimerText == null){
+				Debug.Log("No TimerText.");
+			}
+		}
+
+		if(TimerText != null){
+			SetText();
+		}
+	}
+
+	public void ResetTimer(){
 		SetTimer(3, 0);
 		SetText();
 		isCounting = false;
@@ -26,7 +42,7 @@ public class Timer : MonoBehaviour {
 	}
 
 	void UpdateCounting(){
-		secondCounter -= Time.deltaTime;
+		secondCounter -= Time.deltaTime*10;
 		if(secondCounter <= 0.0f){
 			if(seconds > 0){
 				seconds--;

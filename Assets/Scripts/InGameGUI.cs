@@ -26,8 +26,8 @@ public class InGameGUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		P1Score.text = "P1: " + GameState.Instance.P1Score;
-		P2Score.text = "P2: " + GameState.Instance.P2Score;
+		P1Score.text = "P1: " + GameState.P1Score;
+		P2Score.text = "P2: " + GameState.P2Score;
 
 		switch(GameState.Instance.debugView_CurrentState){ //I DID IT THIS WAY BECAUSE THE DAMN ENUM WAS UNLOADED
 		case 0: //inCountdown
