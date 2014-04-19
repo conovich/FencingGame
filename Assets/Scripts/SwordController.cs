@@ -201,7 +201,9 @@ public class SwordController : MonoBehaviour {
 
 	void SetCurrentMoveType(Move.MoveType newtype){
 		currentMove.SetState(newtype);
-		_MyPlayer.SetMyActionText(currentMove.moveType.ToString());
+		if(_MyPlayer){
+			_MyPlayer.SetMyActionText(currentMove.moveType.ToString());
+		}
 	}
 
 	void OnCollisionEnter(Collision collision){ //should be for rigidbody collisions -- blade, not tip

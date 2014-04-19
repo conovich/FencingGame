@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -38,9 +39,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5330452da997c55409ca053e14467c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Score: 0
-  P2Score: 0
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  myTimer: {fileID: 0}
+  playerSelection: 0
   CurrentState: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66faf1e422df66f4b9288bf64bed321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
