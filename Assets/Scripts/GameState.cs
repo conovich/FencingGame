@@ -89,7 +89,6 @@ public class GameState : MonoBehaviour {
 		case State.mainMenu:
 			break;
 		}
-		Debug.Log (CurrentState);
 
 		if(CurrentState != State.inPlay && myTimer != null){
 			myTimer.StartOrStop(false);

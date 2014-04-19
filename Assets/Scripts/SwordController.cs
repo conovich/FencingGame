@@ -8,7 +8,9 @@ public class SwordController : MonoBehaviour {
 
 	public Transform _MyHilt;
 	public Transform _MyTip;
-	public float rotMagnitude = 10.0f;
+	public float rotMagnitude;
+
+	public float returnToCenterTime = 0.04f;
 
 	public float worldRotMaxX;
 	public float worldRotMaxY;
@@ -27,7 +29,8 @@ public class SwordController : MonoBehaviour {
 
 	bool isInput = false;
 
-	Quaternion originalRot;
+	public Quaternion originalRot;
+	public Quaternion currentRot;
 
 	Move currentMove;
 
@@ -64,6 +67,7 @@ public class SwordController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		currentRot = _MyHilt.rotation;
 		GetInput();
 		RotateJoint(isInput);
 		CheckForMove();
@@ -141,21 +145,7 @@ public class SwordController : MonoBehaviour {
 	}
 
 	void ReturnTipToCenter(){
-		float deltaAngle = 0.2f;
-
-		if(currentWorldRotY > 0 + deltaAngle){ 
-			RotateHiltY(-deltaAngle);
-		}
-		else if(currentWorldRotY < 0 - deltaAngle){
-			RotateHiltY(deltaAngle);
-		}
-
-		if(currentWorldRotX > 0 + deltaAngle){
-			RotateHiltX(-deltaAngle);
-		}
-		else if(currentWorldRotX < 0 - deltaAngle){
-			RotateHiltX(deltaAngle);
-		}
+		_MyHilt.rotation = Quaternion.Slerp(_MyHilt.rotation, originalRot, returnToCenterTime);
 	}
 
 	void CheckForMove(){
@@ -181,11 +171,11 @@ public class SwordController : MonoBehaviour {
 
 	}
 
+
 	void EvaluateMove(){ //based on start pos and last pos, can the move be defined?
-		//currentMove.tipLastPos = _MyTip.position;
+	/*	//currentMove.tipLastPos = _MyTip.position;
 		//parry six
-		Debug.Log("X Rot: " + currentWorldRotX);
-		Debug.Log("Y Rot: " + currentWorldRotY);
+
 
 		if(currentMove.tipLastPos.x > _MyTip.position.x && (Mathf.Abs(currentWorldRotX) < 1.0f)){
 			SetCurrentMoveType(Move.MoveType.parrySix);
@@ -197,7 +187,9 @@ public class SwordController : MonoBehaviour {
 			SetCurrentMoveType(Move.MoveType.nonrealMove);
 		}
 		currentMove.tipLastPos = _MyTip.position;
+		*/
 	}
+
 
 	void SetCurrentMoveType(Move.MoveType newtype){
 		currentMove.SetState(newtype);

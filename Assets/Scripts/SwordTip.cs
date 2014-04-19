@@ -17,8 +17,7 @@ public class SwordTip : MonoBehaviour {
 	void Update () {
 		CheckTipOnTarget();
 	}
-
-	//not working -- collider and joint 2 not moving/rotating
+	
 	void OnCollisionEnter(Collision collision){
 		Debug.Log("Hit something!");
 		if(collision.collider.tag == "TipConstraint"){
@@ -31,6 +30,19 @@ public class SwordTip : MonoBehaviour {
 		else if(collision.collider.tag == "Player1Collider"){
 			Debug.Log("Hit player 1!");
 			P2HitP1();
+		}
+		if(collision.collider.tag == "TipTarget"){
+			Debug.Log("Hit Tip Target: " + collision.gameObject.name);
+			ColorLerper myLerper = collision.gameObject.GetComponent<ColorLerper>();
+			myLerper.SetAlpha(1.0f);
+		}
+	}
+
+	//instead should set all tiptarget colors back to normal when no more input???
+	void OnCollisionExit(Collision collision){
+		if(collision.collider.tag == "TipTarget"){
+			ColorLerper myLerper = collision.gameObject.GetComponent<ColorLerper>();
+			myLerper.SetAlpha(100.0f/255.0f);
 		}
 	}
 
