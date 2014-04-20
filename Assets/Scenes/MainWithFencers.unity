@@ -520,6 +520,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 82.6996613
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyHiltTransform
+      value: 
+      objectReference: {fileID: 991412261}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTipTransform
+      value: 
+      objectReference: {fileID: 874867561}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTip
+      value: 
+      objectReference: {fileID: 874867563}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 1466706788}
@@ -2708,9 +2720,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MyControllers: {fileID: 1567861581}
   _MyPlayer: {fileID: 1444483063}
-  _MyHilt: {fileID: 1260745122}
-  _MyTip: {fileID: 821975129}
-  rotMagnitude: 125
+  _MyActionText: {fileID: 0}
+  _MyHiltTransform: {fileID: 1260745122}
+  _MyTipTransform: {fileID: 821975129}
+  _MyTip: {fileID: 821975131}
+  WorldRotMagnitudeX: 100
+  WorldRotMagnitudeY: 200
+  returnToCenterTime: .0399999991
   worldRotMaxX: 270
   worldRotMaxY: 0
   worldRotMinX: 50
@@ -2718,6 +2734,8 @@ MonoBehaviour:
   _TipCenter: {x: 66, y: 169}
   _MaxXDist: 40
   _MaxYDist: 80
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
+  currentRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &529846565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4210,6 +4228,8 @@ MonoBehaviour:
   _LightBox: {fileID: 625765096}
   _Hilt: {fileID: 1260745122}
   _CrossHares: {fileID: 1879518882}
+  _MySequence: []
+  _SwordInput: 0
 --- !u!65 &821975132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4643,6 +4663,8 @@ MonoBehaviour:
   _LightBox: {fileID: 625765096}
   _Hilt: {fileID: 991412261}
   _CrossHares: {fileID: 1984870793}
+  _MySequence: []
+  _SwordInput: 0
 --- !u!65 &874867564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7629,9 +7651,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MyControllers: {fileID: 1567861581}
   _MyPlayer: {fileID: 78145354}
-  _MyHilt: {fileID: 991412261}
-  _MyTip: {fileID: 874867561}
-  rotMagnitude: 125
+  _MyActionText: {fileID: 0}
+  _MyHiltTransform: {fileID: 991412261}
+  _MyTipTransform: {fileID: 874867561}
+  _MyTip: {fileID: 874867563}
+  WorldRotMagnitudeX: 100
+  WorldRotMagnitudeY: 200
+  returnToCenterTime: .0399999991
   worldRotMaxX: 270
   worldRotMaxY: 0
   worldRotMinX: 50
@@ -7639,6 +7665,8 @@ MonoBehaviour:
   _TipCenter: {x: 34.4000015, y: 174}
   _MaxXDist: 40
   _MaxYDist: 80
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
+  currentRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1466706792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8863,6 +8891,18 @@ Prefab:
       propertyPath: _TipCenter.y
       value: 169
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyHiltTransform
+      value: 
+      objectReference: {fileID: 1260745122}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTipTransform
+      value: 
+      objectReference: {fileID: 821975129}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTip
+      value: 
+      objectReference: {fileID: 821975131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 529846560}
