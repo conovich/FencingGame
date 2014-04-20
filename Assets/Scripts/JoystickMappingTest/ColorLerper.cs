@@ -21,6 +21,6 @@ public class ColorLerper : MonoBehaviour {
 	void LerpAlpha(float endAlpha){
 		Color oldColor = renderer.material.color;
 		Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, endAlpha);
-		renderer.material.color = Color.Lerp(oldColor, newColor, 0.2f);
+		renderer.material.color = Color.Lerp(oldColor, newColor, 0.4f);
 	}
 }

@@ -6,9 +6,12 @@ public class SwordController : MonoBehaviour {
 
 	public Player _MyPlayer;
 
+	public GUIText _MyActionText;
+
 	public Transform _MyHilt;
 	public Transform _MyTip;
-	public float rotMagnitude;
+	public float WorldRotMagnitudeX;
+	public float WorldRotMagnitudeY;
 
 	public float returnToCenterTime = 0.04f;
 
@@ -110,19 +113,19 @@ public class SwordController : MonoBehaviour {
 
 				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
 					//_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
-					RotateHiltX(-worldThetaX*rotMagnitude);
+					RotateHiltX(-worldThetaX*WorldRotMagnitudeX);
 					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //cap to boundaries -- undo last rot
 						//_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
-						RotateHiltX(worldThetaX*rotMagnitude);
+						RotateHiltX(worldThetaX*WorldRotMagnitudeX);
 					}
 				}
 
 				if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
 					//_MyHilt.Rotate(0.0f, worldThetaY*rotMagnitude, 0.0f, Space.World);
-					RotateHiltY(worldThetaY*rotMagnitude);
+					RotateHiltY(worldThetaY*WorldRotMagnitudeY);
 					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //cap to boundaries -- undo last rot 
 						//_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
-						RotateHiltY(-worldThetaY*rotMagnitude);
+						RotateHiltY(-worldThetaY*WorldRotMagnitudeY);
 					}
 				}
 
@@ -195,6 +198,9 @@ public class SwordController : MonoBehaviour {
 		currentMove.SetState(newtype);
 		if(_MyPlayer){
 			_MyPlayer.SetMyActionText(currentMove.moveType.ToString());
+		}
+		else if(_MyActionText){
+			_MyActionText.text = "Action: " + currentMove.moveType.ToString();
 		}
 	}
 

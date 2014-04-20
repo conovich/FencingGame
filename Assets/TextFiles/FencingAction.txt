@@ -2,13 +2,21 @@ advance
 retreat
 lunge recover
 extend
-parry six
-parry four
-parry seven
-parry eight
-circle six
-circle four
-disengage in
-disengage out
-one two in out
-one two out in
+parry six,6
+parry four,4
+parry seven,12,7,14
+parry seven,12,7
+parry eight,11,8,14
+parry eight,11,8
+circle six,12,13,11,2,6
+circle six,12,13,11,6
+circle four,11,13,12,1,4
+circle four,11,13,12,4
+disengage in,12,13,11
+disengage in,12,11
+disengage out,11,13,12
+disengage out,11,12
+one two in out,12,13,11,13,12
+one two in out,12,13,11,11,13,12
+one two out in,11,13,12,13,11
+one two out in,11,13,12,12,13,11
