@@ -260,7 +260,7 @@ GameObject:
   - 23: {fileID: 48097037}
   - 114: {fileID: 48097036}
   m_Layer: 8
-  m_Name: TipTarget3
+  m_Name: 3
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,7 +346,7 @@ GameObject:
   - 23: {fileID: 62849191}
   - 114: {fileID: 62849190}
   m_Layer: 8
-  m_Name: TipTarget9
+  m_Name: 9
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,7 +456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget13
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -535,8 +535,9 @@ MonoBehaviour:
   _MyControllers: {fileID: 901651373}
   _MyPlayer: {fileID: 0}
   _MyActionText: {fileID: 686502792}
-  _MyHilt: {fileID: 1822271143}
-  _MyTip: {fileID: 1111035000}
+  _MyHiltTransform: {fileID: 1822271143}
+  _MyTipTransform: {fileID: 1111035000}
+  _MyTip: {fileID: 1111035002}
   WorldRotMagnitudeX: 100
   WorldRotMagnitudeY: 200
   returnToCenterTime: .0399999991
@@ -629,7 +630,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget6
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -827,7 +828,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -923,7 +924,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget10
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -979,7 +980,7 @@ GameObject:
   - 23: {fileID: 363414458}
   - 114: {fileID: 363414461}
   m_Layer: 8
-  m_Name: TipTarget5
+  m_Name: 5
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,7 +1066,7 @@ GameObject:
   - 23: {fileID: 378178942}
   - 114: {fileID: 378178945}
   m_Layer: 8
-  m_Name: TipTarget6
+  m_Name: 6
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1372,7 +1373,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget7
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -1420,7 +1421,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -1476,7 +1477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget9
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -1528,7 +1529,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -1584,7 +1585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -1732,7 +1733,7 @@ GameObject:
   - 23: {fileID: 788464616}
   - 114: {fileID: 788464615}
   m_Layer: 8
-  m_Name: TipTarget7
+  m_Name: 7
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1818,7 +1819,7 @@ GameObject:
   - 23: {fileID: 882323773}
   - 114: {fileID: 882323772}
   m_Layer: 8
-  m_Name: TipTarget10
+  m_Name: 10
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2096,6 +2097,18 @@ Prefab:
       propertyPath: WorldRotMagnitudeY
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTipTransform
+      value: 
+      objectReference: {fileID: 1111035000}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyTip
+      value: 
+      objectReference: {fileID: 1111035002}
+    - target: {fileID: 11400004, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _MyHiltTransform
+      value: 
+      objectReference: {fileID: 1822271143}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 98220708}
@@ -2295,6 +2308,8 @@ MonoBehaviour:
   _LightBox: {fileID: 0}
   _Hilt: {fileID: 1822271143}
   _CrossHares: {fileID: 467246423}
+  _MySequence: []
+  _SwordInput: 0
 --- !u!65 &1111035003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2384,7 +2399,7 @@ GameObject:
   - 23: {fileID: 1140283689}
   - 114: {fileID: 1140283688}
   m_Layer: 8
-  m_Name: TipTarget8
+  m_Name: 8
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2470,7 +2485,7 @@ GameObject:
   - 23: {fileID: 1144911910}
   - 114: {fileID: 1144911913}
   m_Layer: 8
-  m_Name: CenterTipTarget
+  m_Name: 0
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2646,7 +2661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: CenterTipTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -2674,7 +2689,7 @@ GameObject:
   - 23: {fileID: 1311047700}
   - 114: {fileID: 1311047699}
   m_Layer: 8
-  m_Name: TipTarget12
+  m_Name: 12
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,7 +2799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget14
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -2812,7 +2827,7 @@ GameObject:
   - 23: {fileID: 1435446157}
   - 114: {fileID: 1435446156}
   m_Layer: 8
-  m_Name: TipTarget11
+  m_Name: 11
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2988,7 +3003,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget12
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -3016,7 +3031,7 @@ GameObject:
   - 23: {fileID: 1679707662}
   - 114: {fileID: 1679707661}
   m_Layer: 8
-  m_Name: TipTarget2
+  m_Name: 2
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3126,7 +3141,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget4
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -3220,7 +3235,7 @@ GameObject:
   - 23: {fileID: 1801924697}
   - 114: {fileID: 1801924700}
   m_Layer: 8
-  m_Name: TipTarget4
+  m_Name: 4
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3306,7 +3321,7 @@ GameObject:
   - 23: {fileID: 1810318406}
   - 114: {fileID: 1810318410}
   m_Layer: 8
-  m_Name: TipTarget14
+  m_Name: 14
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3457,7 +3472,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget8
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text
@@ -3608,7 +3623,7 @@ GameObject:
   - 23: {fileID: 1963669149}
   - 114: {fileID: 1963669148}
   m_Layer: 8
-  m_Name: TipTarget13
+  m_Name: 13
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3760,7 +3775,7 @@ GameObject:
   - 23: {fileID: 2031910360}
   - 114: {fileID: 2031910359}
   m_Layer: 8
-  m_Name: TipTarget1
+  m_Name: 1
   m_TagString: TipTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,7 +3885,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Name
-      value: TipTarget11
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 6f801ce0a65823448a598c820f3ab2a9, type: 2}
       propertyPath: m_Text

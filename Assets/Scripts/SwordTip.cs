@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SwordTip : MonoBehaviour {
 	public GameObject _LightBox;
 	public Transform _Hilt;
 	public CrossHares _CrossHares;
+
+	public List<string> _MySequence;
+	public bool _SwordInput;
+
 	private LightBox _LightBoxScript;
 
 
@@ -32,10 +37,16 @@ public class SwordTip : MonoBehaviour {
 			P2HitP1();
 		}
 		if(collision.collider.tag == "TipTarget"){
-			Debug.Log("Hit Tip Target: " + collision.gameObject.name);
 			ColorLerper myLerper = collision.gameObject.GetComponent<ColorLerper>();
 			myLerper.SetAlpha(1.0f);
+			if(_SwordInput){
+				_MySequence.Add(collision.gameObject.name);
+			}
 		}
+	}
+
+	public void ClearInputList(){
+		_MySequence.Clear();
 	}
 
 	//instead should set all tiptarget colors back to normal when no more input???

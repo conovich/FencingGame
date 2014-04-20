@@ -39,4 +39,23 @@ public class Sequencer : MonoBehaviour {
 		SequenceList.Add(singleSequenceList);
 	}
 
+	public string CheckSequence(List<string> inputSequence){
+		string move = "nonreal move";
+
+		for(int i = 0; i < SequenceList.Count; i++){
+			if(SequenceList[i].Count - 1 == inputSequence.Count){ //first item in sequence list is the name!
+				for(int j = 0; j < inputSequence.Count; j++){ //first item in input sequence is a valid move
+					if(SequenceList[i][j + 1] != inputSequence[j]){
+						break;
+					}
+					else if(j == inputSequence.Count - 1){ //if you get to the end of the input and everything matches, you found a valid move!
+						move = SequenceList[i][0];
+						return move;
+					}
+				}
+			}
+		}
+		return move;
+	}
+
 }

@@ -8,8 +8,9 @@ public class SwordController : MonoBehaviour {
 
 	public GUIText _MyActionText;
 
-	public Transform _MyHilt;
-	public Transform _MyTip;
+	public Transform _MyHiltTransform;
+	public Transform _MyTipTransform;
+	public SwordTip _MyTip;
 	public float WorldRotMagnitudeX;
 	public float WorldRotMagnitudeY;
 
@@ -35,43 +36,17 @@ public class SwordController : MonoBehaviour {
 	public Quaternion originalRot;
 	public Quaternion currentRot;
 
-	Move currentMove;
-
-	public class Move{
-		public Move(){
-
-		}
-
-		public bool isComplete = false;
-		public Vector3 tipStartPos = Vector3.zero;
-		public Vector3 tipLastPos = Vector3.zero;
-		public MoveType moveType = MoveType.none;
-
-		public enum MoveType{ //add more
-			none,
-			nonrealMove,
-			disengage,
-			parryFour,
-			parrySix,
-			circleFour,
-			circleSix
-		}
-
-		public void SetState(Move.MoveType newType){
-			moveType = newType;
-		}
-	}
-
 	// Use this for initialization
 	void Start () {
-		originalRot = _MyHilt.rotation;
-		currentMove = new Move();
+		originalRot = _MyHiltTransform.rotation;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		currentRot = _MyHilt.rotation;
+		currentRot = _MyHiltTransform.rotation;
+
 		GetInput();
+
 		RotateJoint(isInput);
 		CheckForMove();
 	}
@@ -99,31 +74,33 @@ public class SwordController : MonoBehaviour {
 				isInput = true;
 			}
 		}
+
+		_MyTip._SwordInput = isInput;
 	}
 
 	void RotateJoint(bool isInput){
 		if(isInput){
 			//sin(theta) = opp/hyp --> y axis = opp, hyp = dist from hilt to tip
-			float swordLength = (_MyHilt.position - _MyTip.position).magnitude;
+			float swordLength = (_MyHiltTransform.position - _MyTipTransform.position).magnitude;
 			float worldThetaX = yInput/swordLength;
 			float worldThetaY = xInput/swordLength;
 
 
 			//if(tag == "Player1Sword"){
 
-				if(_MyTip.position.y <= _TipCenter.y + _MaxYDist && _MyTip.position.y >= _TipCenter.y - _MaxYDist){
+				if(_MyTipTransform.position.y <= _TipCenter.y + _MaxYDist && _MyTipTransform.position.y >= _TipCenter.y - _MaxYDist){
 					//_MyHilt.Rotate(-worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
 					RotateHiltX(-worldThetaX*WorldRotMagnitudeX);
-					if(_MyTip.position.y >= _TipCenter.y + _MaxYDist || _MyTip.position.y <= _TipCenter.y - _MaxYDist){ //cap to boundaries -- undo last rot
+					if(_MyTipTransform.position.y >= _TipCenter.y + _MaxYDist || _MyTipTransform.position.y <= _TipCenter.y - _MaxYDist){ //cap to boundaries -- undo last rot
 						//_MyHilt.Rotate(worldThetaX*rotMagnitude, 0.0f, 0.0f, Space.World);
 						RotateHiltX(worldThetaX*WorldRotMagnitudeX);
 					}
 				}
 
-				if(_MyTip.position.x <= _TipCenter.x + _MaxXDist && _MyTip.position.x >= _TipCenter.x - _MaxXDist){
+				if(_MyTipTransform.position.x <= _TipCenter.x + _MaxXDist && _MyTipTransform.position.x >= _TipCenter.x - _MaxXDist){
 					//_MyHilt.Rotate(0.0f, worldThetaY*rotMagnitude, 0.0f, Space.World);
 					RotateHiltY(worldThetaY*WorldRotMagnitudeY);
-					if(_MyTip.position.x >= _TipCenter.x + _MaxXDist || _MyTip.position.x <= _TipCenter.x - _MaxXDist){ //cap to boundaries -- undo last rot 
+					if(_MyTipTransform.position.x >= _TipCenter.x + _MaxXDist || _MyTipTransform.position.x <= _TipCenter.x - _MaxXDist){ //cap to boundaries -- undo last rot 
 						//_MyHilt.Rotate(0.0f, -worldThetaY*rotMagnitude, 0.0f, Space.World);
 						RotateHiltY(-worldThetaY*WorldRotMagnitudeY);
 					}
@@ -138,37 +115,23 @@ public class SwordController : MonoBehaviour {
 	}
 
 	void RotateHiltX(float angle){
-		_MyHilt.Rotate(angle, 0.0f, 0.0f, Space.World);
+		_MyHiltTransform.Rotate(angle, 0.0f, 0.0f, Space.World);
 		currentWorldRotX += angle;
 	}
 
 	void RotateHiltY(float angle){
-		_MyHilt.Rotate(0.0f, angle, 0.0f, Space.World);
+		_MyHiltTransform.Rotate(0.0f, angle, 0.0f, Space.World);
 		currentWorldRotY += angle;
 	}
 
 	void ReturnTipToCenter(){
-		_MyHilt.rotation = Quaternion.Slerp(_MyHilt.rotation, originalRot, returnToCenterTime);
+		_MyHiltTransform.rotation = Quaternion.Slerp(_MyHiltTransform.rotation, originalRot, returnToCenterTime);
 	}
 
 	void CheckForMove(){
-		if(isInput){
-			currentMove.isComplete = false;
-			if(currentMove.tipStartPos == Vector3.zero){ //start of new move!
-				currentMove.tipStartPos = _MyTip.position;
-				currentMove.tipLastPos = _MyTip.position;
-				SetCurrentMoveType(Move.MoveType.none);
-			}
-			else{ //if it's not the start of a new move...
-				EvaluateMove(); //assign move!
-			}
-		}
-		else{ //no more input!
-			if(currentMove.tipStartPos != Vector3.zero){//*just* finished a move
-				//set what move it is here!
-				currentMove.isComplete = true;
-				currentMove.tipStartPos = Vector3.zero;
-				currentMove.tipLastPos = Vector3.zero;
+		if(!isInput){
+			if(_MyTip._MySequence.Count > 0){
+				EvaluateMove();
 			}
 		}
 
@@ -176,31 +139,18 @@ public class SwordController : MonoBehaviour {
 
 
 	void EvaluateMove(){ //based on start pos and last pos, can the move be defined?
-	/*	//currentMove.tipLastPos = _MyTip.position;
-		//parry six
-
-
-		if(currentMove.tipLastPos.x > _MyTip.position.x && (Mathf.Abs(currentWorldRotX) < 1.0f)){
-			SetCurrentMoveType(Move.MoveType.parrySix);
-		}
-		else if(currentMove.tipLastPos.x < _MyTip.position.x && (Mathf.Abs(currentWorldRotX) < 1.0f)){
-			SetCurrentMoveType(Move.MoveType.parryFour);
-		}
-		else{
-			SetCurrentMoveType(Move.MoveType.nonrealMove);
-		}
-		currentMove.tipLastPos = _MyTip.position;
-		*/
+		string newMove = gameObject.GetComponent<Sequencer>().CheckSequence(_MyTip._MySequence);
+		_MyTip.ClearInputList();
+		SetCurrentMove(newMove);
 	}
 
 
-	void SetCurrentMoveType(Move.MoveType newtype){
-		currentMove.SetState(newtype);
+	void SetCurrentMove(string newMove){
 		if(_MyPlayer){
-			_MyPlayer.SetMyActionText(currentMove.moveType.ToString());
+			_MyPlayer.SetMyActionText(newMove);
 		}
 		else if(_MyActionText){
-			_MyActionText.text = "Action: " + currentMove.moveType.ToString();
+			_MyActionText.text = "Action: " + newMove;
 		}
 	}
 
