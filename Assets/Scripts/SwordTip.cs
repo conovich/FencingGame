@@ -7,6 +7,8 @@ public class SwordTip : MonoBehaviour {
 	public Transform _Hilt;
 	public CrossHares _CrossHares;
 
+	public GameObject _MyPlayer;
+
 	public List<string> _MySequence;
 	public bool _SwordInput;
 
@@ -36,9 +38,14 @@ public class SwordTip : MonoBehaviour {
 			Debug.Log("Hit player 1!");
 			P2HitP1();
 		}
-		if(collision.collider.tag == "TipTarget"){
-			ColorLerper myLerper = collision.gameObject.GetComponent<ColorLerper>();
-			myLerper.SetAlpha(1.0f);
+		if(collision.collider.tag == "TipTargetP1" && _MyPlayer.tag == "Player"){
+			ChangeTipTargetAlpha(1.0f, collision.gameObject);
+			if(_SwordInput){
+				_MySequence.Add(collision.gameObject.name);
+			}
+		}
+		else if(collision.collider.tag == "TipTargetP2" && _MyPlayer.tag == "Player2"){
+			ChangeTipTargetAlpha(1.0f, collision.gameObject);
 			if(_SwordInput){
 				_MySequence.Add(collision.gameObject.name);
 			}
@@ -51,10 +58,17 @@ public class SwordTip : MonoBehaviour {
 
 	//instead should set all tiptarget colors back to normal when no more input???
 	void OnCollisionExit(Collision collision){
-		if(collision.collider.tag == "TipTarget"){
-			ColorLerper myLerper = collision.gameObject.GetComponent<ColorLerper>();
-			myLerper.SetAlpha(100.0f/255.0f);
+		if(collision.collider.tag == "TipTargetP1" && _MyPlayer.tag == "Player"){
+			ChangeTipTargetAlpha(100.0f/255.0f, collision.gameObject);
 		}
+		if(collision.collider.tag == "TipTargetP2" && _MyPlayer.tag == "Player2"){
+			ChangeTipTargetAlpha(100.0f/255.0f, collision.gameObject);
+		}
+	}
+
+	void ChangeTipTargetAlpha(float newAlpha, GameObject target){
+		ColorLerper myLerper = target.GetComponent<ColorLerper>();
+		myLerper.SetAlpha(newAlpha);
 	}
 
 	void P1HitP2(){

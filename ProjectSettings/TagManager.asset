@@ -13,7 +13,10 @@ TagManager:
   - Player2Tip
   - Player2
   - TimerText
-  - TipTarget
+  - TipTargetP1
+  - TipTargetP2
+  - 
+  - 
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -16,18 +16,19 @@ public class ControllerInput : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetControllers ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GetState1();
-		if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+		if(GameState.playerSelection == GameState.PlayerSelection.multiplayer){
 			GetState2();
 		}
 	}
 
-	void GetControllers(){
+	public void GetControllers(){
+		Debug.Log("MEEP" + GameState.playerSelection);
+
 		// Find a PlayerIndex, for a single player game
 		// Will find the first controller that is connected and use it
 		if (!player1IndexSet || !prevState1.IsConnected)
@@ -47,7 +48,7 @@ public class ControllerInput : MonoBehaviour {
 			}
 		}
 		
-		if ((!player2IndexSet || !prevState2.IsConnected) && GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer)
+		if ((!player2IndexSet || !prevState2.IsConnected) && GameState.playerSelection == GameState.PlayerSelection.multiplayer)
 		{
 			for (int i = 0; i < 4; ++i)
 			{
@@ -70,7 +71,7 @@ public class ControllerInput : MonoBehaviour {
 		prevState1 = state1;
 		state1 = GamePad.GetState(player1Index);
 
-		if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+		if(GameState.playerSelection == GameState.PlayerSelection.multiplayer){
 			prevState2 = state2;
 			state2 = GamePad.GetState(player2Index);
 		}

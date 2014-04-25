@@ -42,7 +42,7 @@ MonoBehaviour:
   Player1: {fileID: 0}
   Player2: {fileID: 0}
   myTimer: {fileID: 0}
-  playerSelection: 0
+  _MyControllerInput: {fileID: 11400002}
   CurrentState: 0
 --- !u!114 &11400002
 MonoBehaviour:

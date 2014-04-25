@@ -25,11 +25,13 @@ public class MainMenuGUI : MonoBehaviour {
 		//make multiplayer vs single player toggle here, to set gamestate's playerselection enum 
 		if(GUI.Toggle(new Rect(10, 40, 120, 20), isSingleplayer, "Single Player")){
 			isSingleplayer = true;
-			GameState.Instance.playerSelection = GameState.PlayerSelection.singlePlayer;
+			GameState.playerSelection = GameState.PlayerSelection.singlePlayer;
+
 		}
 		if(GUI.Toggle ( new Rect(10, 60, 120, 20), !isSingleplayer, "Multiplayer")){
 			isSingleplayer = false;
-			GameState.Instance.playerSelection = GameState.PlayerSelection.multiplayer;
+			GameState.playerSelection = GameState.PlayerSelection.multiplayer;
+			//GameState.Instance._MyControllerInput.GetControllers();
 		}
 	}
 }

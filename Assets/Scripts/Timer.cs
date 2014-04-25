@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour {
 	}
 
 	void UpdateCounting(){
-		secondCounter -= Time.deltaTime*10;
+		secondCounter -= Time.deltaTime;
 		if(secondCounter <= 0.0f){
 			if(seconds > 0){
 				seconds--;

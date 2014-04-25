@@ -12,6 +12,8 @@ public class GameState : MonoBehaviour {
 
 	public Timer myTimer;
 
+	public ControllerInput _MyControllerInput;
+
 
 
 	private static GameState _instance;
@@ -25,7 +27,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	//toggle-able in the main menu!!
-	public PlayerSelection playerSelection;
+	public static PlayerSelection playerSelection;
 
 	public enum State{
 		inCountdown = 0,
@@ -50,7 +52,7 @@ public class GameState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 
 	public void Reset(){
@@ -62,6 +64,7 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log("My player state is: " + playerSelection);
 		if(Application.loadedLevel == 1){
 			if(resetAllInPlay){
 				Reset ();

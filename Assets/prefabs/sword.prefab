@@ -93,6 +93,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400002}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: sword
   m_TagString: Player1Sword
@@ -375,6 +376,8 @@ MonoBehaviour:
   _LightBox: {fileID: 0}
   _Hilt: {fileID: 400004}
   _CrossHares: {fileID: 11400006}
+  _MySequence: []
+  _SwordInput: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,8 +407,9 @@ MonoBehaviour:
   _MyControllers: {fileID: 0}
   _MyPlayer: {fileID: 0}
   _MyActionText: {fileID: 0}
-  _MyHilt: {fileID: 400004}
-  _MyTip: {fileID: 400008}
+  _MyHiltTransform: {fileID: 0}
+  _MyTipTransform: {fileID: 0}
+  _MyTip: {fileID: 0}
   WorldRotMagnitudeX: 100
   WorldRotMagnitudeY: 200
   returnToCenterTime: .0399999991
@@ -432,6 +436,18 @@ MonoBehaviour:
   _OnTargetMat: {fileID: 2100000, guid: cdb5f845e3f888c4fa9623701936d8be, type: 2}
   _OffTargetMat: {fileID: 2100000, guid: 89301ce917a5b1c4584c419010b4e2c9, type: 2}
   _MyLight: {fileID: 10800000}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0657a1b9aed16429e70ec57d12b347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SequenceText: {fileID: 4900000, guid: 045e2f61c64b12842ad0ba3ee5858f6d, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

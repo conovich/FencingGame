@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
 
 		//to reset or not to reset?
 		//if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
-		if(tag == "Player" && GameState.Instance.playerSelection == GameState.PlayerSelection.singlePlayer){
+		if(tag == "Player" && GameState.playerSelection == GameState.PlayerSelection.singlePlayer){
 			//_currentDistance = new Vector3(0.0f, 0.0f, 0.0f); //DONT RESET THIS.
 		}
 		//}
@@ -123,11 +123,14 @@ public class Player : MonoBehaviour {
 				GetInputPlayer();	
 			}
 			else if(gameObject.tag == "Player2"){
-				if(GameState.Instance.playerSelection == GameState.PlayerSelection.multiplayer){
+				Debug.Log("Hai P2");
+				if(GameState.playerSelection == GameState.PlayerSelection.multiplayer){
 					GetInputPlayer2();
+					Debug.Log ("Getting P2 multiplayer  input!!!");
 				}
 				else{
 					GetInputOpponent();
+					Debug.Log ("Getting Opponent input!!!!");
 					//if(!animation.isPlaying && _animState == State.retreat && _thePlayer._animState == State.lungeRecover){
 					//	PlayMyAnimation("Advance 1", State.advance);	
 					//}
@@ -214,7 +217,7 @@ public class Player : MonoBehaviour {
 			_opponentOn = !_opponentOn;
 		}
 		if(!animation.isPlaying && _opponentOn){
-			PlayMyAnimation("Advance 1", State.advance);
+			//PlayMyAnimation("Advance 1", State.advance);
 			/*if(_thePlayer._CurrentState == Player.State.advance){
 				PlayMyAnimation("Retreat", State.retreat);
 			}

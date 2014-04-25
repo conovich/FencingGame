@@ -18,6 +18,7 @@ public class InGameGUI : MonoBehaviour {
 	void Start () {
 		CountdownText.text = "";
 		TellScoreText.text = "";
+		GameState.Instance._MyControllerInput.GetControllers();
 	}
 	
 	// Update is called once per frame

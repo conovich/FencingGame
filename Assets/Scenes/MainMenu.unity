@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1149055057}
   - 114: {fileID: 1149055056}
+  - 114: {fileID: 1149055058}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -182,12 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5330452da997c55409ca053e14467c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Score: 0
-  P2Score: 0
   Player1: {fileID: 0}
   Player2: {fileID: 0}
   myTimer: {fileID: 0}
-  playerSelection: 1
+  _MyControllerInput: {fileID: 1149055058}
   CurrentState: 6
 --- !u!4 &1149055057
 Transform:
@@ -200,6 +199,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1149055058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 69cf70be5e0cf8141a2b173c7351d1e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1785490107}
+  m_GameObject: {fileID: 1149055055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66faf1e422df66f4b9288bf64bed321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642298137
 GameObject:
   m_ObjectHideFlags: 0
