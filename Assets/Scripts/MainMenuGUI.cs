@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MainMenuGUI : MonoBehaviour {
 	bool isSingleplayer = true;
+	public Font _MyFont; 
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,8 @@ public class MainMenuGUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		GUI.skin.font = _MyFont;
+
 		float buttonHeight = 30;
 		float buttonWidth = 120;
 		if(GUI.Button(new Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - buttonHeight/2, buttonWidth, buttonHeight), "START MATCH")){

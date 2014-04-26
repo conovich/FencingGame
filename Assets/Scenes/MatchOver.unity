@@ -123,7 +123,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .474509805, g: 0, b: .10467127, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1347417038}
   - 114: {fileID: 1347417037}
+  - 114: {fileID: 1347417039}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -184,7 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 0}
   Player2: {fileID: 0}
-  playerSelection: 0
+  myTimer: {fileID: 0}
+  _MyControllerInput: {fileID: 1347417039}
   CurrentState: 0
 --- !u!4 &1347417038
 Transform:
@@ -197,6 +199,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1347417039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 69cf70be5e0cf8141a2b173c7351d1e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593774275}
+  m_GameObject: {fileID: 1347417036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66faf1e422df66f4b9288bf64bed321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1593774275
 Prefab:
   m_ObjectHideFlags: 0

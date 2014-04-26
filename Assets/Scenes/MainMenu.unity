@@ -123,7 +123,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .151977688, g: .0246450379, b: .279310346, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7ff3a0b50af064eb2cc20d9411a501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MyFont: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
 --- !u!1001 &1785490107
 Prefab:
   m_ObjectHideFlags: 0
