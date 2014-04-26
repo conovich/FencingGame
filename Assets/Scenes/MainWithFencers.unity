@@ -525,7 +525,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &40703074
@@ -585,13 +585,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &41993938
@@ -668,7 +668,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1001 &60550151
@@ -773,8 +773,6 @@ GameObject:
   - 4: {fileID: 78145352}
   - 111: {fileID: 78145353}
   - 114: {fileID: 78145354}
-  - 114: {fileID: 78145356}
-  - 95: {fileID: 78145355}
   m_Layer: 0
   m_Name: FENCER_PLAYER
   m_TagString: Player
@@ -846,33 +844,6 @@ MonoBehaviour:
   _MyReference: {fileID: 1192361105}
   EngardeLine: {fileID: 2125413326}
   _CurrentState: 0
---- !u!95 &78145355
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: e7348f528c9d0074db705b9476d9f63e,
-    type: 2}
-  m_PrefabInternal: {fileID: 178951757}
-  m_GameObject: {fileID: 78145351}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 0b8990138d63beb4ead25a20fbd9ac19, type: 3}
-  m_Controller: {fileID: 9100000, guid: d684ad5526d445e4996c391db86eb9f8, type: 2}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 1
-  m_HasTransformHierarchy: 1
---- !u!114 &78145356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: e7348f528c9d0074db705b9476d9f63e,
-    type: 2}
-  m_PrefabInternal: {fileID: 178951757}
-  m_GameObject: {fileID: 78145351}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6038770000e80ea4e9fc8682de3cd852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &78490356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1060,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &116918122
@@ -1625,7 +1596,9 @@ Prefab:
       propertyPath: _MyControllers
       value: 
       objectReference: {fileID: 1567861581}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+    - {fileID: 9500000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 78145351}
   m_IsPrefabParent: 0
@@ -1674,7 +1647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &181329844
 Transform:
   m_ObjectHideFlags: 0
@@ -1779,7 +1752,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &197690677
@@ -2068,7 +2041,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &275414868
@@ -2295,7 +2268,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &291702954
@@ -2361,7 +2334,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &304739162
@@ -3125,7 +3098,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &401157818
@@ -3662,7 +3635,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &477740044
@@ -3958,7 +3931,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &496389729
@@ -4387,7 +4360,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &569290625
@@ -4974,13 +4947,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &639999272
@@ -5299,7 +5272,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &659955118
@@ -5625,7 +5598,67 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200016, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200002, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200000, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200010, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200014, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200018, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200026, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200008, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200028, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200004, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200024, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200022, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200006, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200020, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200012, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
@@ -5809,7 +5842,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &697644605
@@ -6001,7 +6034,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &738561520
@@ -6426,6 +6459,66 @@ Prefab:
       propertyPath: m_TagString
       value: TipTargetP1
       objectReference: {fileID: 0}
+    - target: {fileID: 13200028, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200008, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200016, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200000, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200012, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200006, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200026, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200004, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200002, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200022, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200020, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200018, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200014, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200010, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200024, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
   m_RootGameObject: {fileID: 931517388}
@@ -6472,13 +6565,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &788088382
@@ -6616,7 +6709,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &793239492
@@ -8571,7 +8664,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1056397549
@@ -8637,7 +8730,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1061451129
@@ -8730,7 +8823,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1070545958
@@ -9685,7 +9778,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1206590720
@@ -9897,13 +9990,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 20
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1260745121
@@ -10025,7 +10118,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .810344815, g: .0715010315, b: .658230126, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -10173,13 +10266,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 32
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &1304269826
@@ -10315,6 +10408,15 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 13200000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee,
+        type: 3}
+    - target: {fileID: 13200000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
   m_RootGameObject: {fileID: 41993935}
@@ -10411,7 +10513,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1345749894
@@ -10960,7 +11062,6 @@ GameObject:
   - 111: {fileID: 1444483062}
   - 114: {fileID: 1444483063}
   - 114: {fileID: 1444483061}
-  - 95: {fileID: 1444483064}
   m_Layer: 0
   m_Name: FENCER_PLAYER2
   m_TagString: Player2
@@ -10989,15 +11090,17 @@ Transform:
 --- !u!114 &1444483061
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: e7348f528c9d0074db705b9476d9f63e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1864444314}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444483059}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6038770000e80ea4e9fc8682de3cd852, type: 3}
+  m_Script: {fileID: 11500000, guid: b496ced7b835bfa49bc06dbdd940f02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player1: {fileID: 78145354}
+  _ActionResponseText: {fileID: 4900000, guid: 6ac0b34f76cbc6045baf826927091ccf, type: 3}
+  _MyResponse: {fileID: 1841301317}
 --- !u!111 &1444483062
 Animation:
   m_ObjectHideFlags: 0
@@ -11044,21 +11147,6 @@ MonoBehaviour:
   _MyReference: {fileID: 1194058339}
   EngardeLine: {fileID: 230441793}
   _CurrentState: 0
---- !u!95 &1444483064
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: e7348f528c9d0074db705b9476d9f63e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1864444314}
-  m_GameObject: {fileID: 1444483059}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 0b8990138d63beb4ead25a20fbd9ac19, type: 3}
-  m_Controller: {fileID: 9100000, guid: d684ad5526d445e4996c391db86eb9f8, type: 2}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 1
-  m_HasTransformHierarchy: 1
 --- !u!1 &1449347549
 GameObject:
   m_ObjectHideFlags: 0
@@ -11479,7 +11567,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1502121698
@@ -11798,7 +11886,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1542456587
@@ -11976,7 +12064,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1567861578
@@ -12272,7 +12360,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1627119442
@@ -12844,6 +12932,15 @@ Prefab:
     - target: {fileID: 100000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee,
+        type: 3}
+    - target: {fileID: 13200000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283445550
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b1e141b64c48ce4e885d260ac7943e7, type: 2}
@@ -13859,13 +13956,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &1841301318
@@ -13970,7 +14067,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1863273106
@@ -14167,7 +14264,9 @@ Prefab:
       propertyPath: _MyControllers
       value: 
       objectReference: {fileID: 1567861581}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
+    - {fileID: 11400002, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e7348f528c9d0074db705b9476d9f63e, type: 2}
   m_RootGameObject: {fileID: 1444483059}
   m_IsPrefabParent: 0
@@ -14608,7 +14707,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1954687244
@@ -14770,7 +14869,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1968347985
@@ -15270,13 +15369,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: a1324f39fd4df9e4f9b382899a1536ee, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &2024722475
@@ -15353,7 +15452,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &2041533826
@@ -15858,7 +15957,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &2119845623
@@ -16075,7 +16174,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4279374354
+    rgba: 4283445550
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &2138582392
