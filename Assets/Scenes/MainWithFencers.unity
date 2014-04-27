@@ -11296,6 +11296,7 @@ GameObject:
   - 111: {fileID: 1444483062}
   - 114: {fileID: 1444483063}
   - 114: {fileID: 1444483061}
+  - 114: {fileID: 1444483064}
   m_Layer: 0
   m_Name: FENCER_PLAYER2
   m_TagString: Player2
@@ -11381,6 +11382,19 @@ MonoBehaviour:
   _MyReference: {fileID: 1194058339}
   EngardeLine: {fileID: 230441793}
   _CurrentState: 0
+--- !u!114 &1444483064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444483059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f075cd903af17b14db6f196bef20f0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PlayerFencer: {fileID: 78145352}
+  _LungeDistance: 150
 --- !u!1 &1449347549
 GameObject:
   m_ObjectHideFlags: 0

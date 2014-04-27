@@ -217,6 +217,26 @@ public class Player : MonoBehaviour {
 			_opponentOn = !_opponentOn;
 		}
 		if(!animation.isPlaying && _opponentOn){
+			DistanceAI myDistAI = gameObject.GetComponent<DistanceAI>();
+
+			string newMovement = myDistAI.ChooseMovement();
+
+			State newState = new State();
+			newState = State.idle;
+			if(newMovement == "LungeRecover"){
+				newState = State.lungeRecover;
+			}
+			else if(newMovement == "Advance 1"){
+				newState = State.advance;
+			}
+			else if(newMovement == "Retreat"){
+				newState = State.retreat;
+			}
+			else{
+				Debug.Log("State not defined here!!! New Movement is: " + newMovement);
+			}
+
+			PlayMyAnimation(newMovement, newState);
 			//PlayMyAnimation("Advance 1", State.advance);
 			/*if(_thePlayer._CurrentState == Player.State.advance){
 				PlayMyAnimation("Retreat", State.retreat);
