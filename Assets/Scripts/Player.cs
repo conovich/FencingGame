@@ -218,7 +218,6 @@ public class Player : MonoBehaviour {
 		}
 		if(!animation.isPlaying && _opponentOn){
 			DistanceAI myDistAI = gameObject.GetComponent<DistanceAI>();
-
 			string newMovement = myDistAI.ChooseMovement();
 
 			State newState = new State();

@@ -42,7 +42,6 @@ public class DistanceAI : MonoBehaviour {
 
 	float GetDistanceToPlayer(){
 		float distance = (transform.position - _PlayerFencer.transform.position).magnitude;
-		Debug.Log(distance);
 		return distance;
 	}
 

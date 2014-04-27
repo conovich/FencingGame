@@ -47,7 +47,7 @@ public class SwordController : MonoBehaviour {
 
 		GetInput();
 
-		RotateJoint(isInput);
+		RotateJoint();
 		CheckForMove();
 	}
 
@@ -78,7 +78,7 @@ public class SwordController : MonoBehaviour {
 		_MyTip._SwordInput = isInput;
 	}
 
-	void RotateJoint(bool isInput){
+	void RotateJoint(){
 		if(isInput){
 			//sin(theta) = opp/hyp --> y axis = opp, hyp = dist from hilt to tip
 			float swordLength = (_MyHiltTransform.position - _MyTipTransform.position).magnitude;
@@ -158,6 +158,39 @@ public class SwordController : MonoBehaviour {
 
 	}
 
+	public void AIParrySix(){
+		float slerpTime = 0.04f;
+		Quaternion target = new Quaternion(originalRot.x, originalRot.y, originalRot.z, originalRot.w + 45.0f);
+		_MyHiltTransform.rotation = Quaternion.Slerp(_MyHiltTransform.rotation, target, slerpTime);
+	}
+
+	public void AIParryFour(){
+
+	}
+
+	public void AICircleSix(){
+		
+	}
+
+	public void AICircleFour(){
+		
+	}
+
+	public void AIParryEight(){
+
+	}
+
+	public void AIParrySeven(){
+
+	}
+
+	public void AIDisengageIn(){
+
+	}
+
+	public void AIDisengageOut(){
+
+	}
 
 
 }

@@ -11393,7 +11393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f075cd903af17b14db6f196bef20f0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PlayerFencer: {fileID: 78145352}
+  _PlayerFencer: {fileID: 1668335300}
   _LungeDistance: 150
 --- !u!1 &1449347549
 GameObject:
