@@ -15,8 +15,10 @@ TagManager:
   - TimerText
   - TipTargetP1
   - TipTargetP2
+  - FileWriter
   - 
   - 
+  - TipTarget
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

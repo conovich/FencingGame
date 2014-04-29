@@ -114,14 +114,34 @@ public class SwordController : MonoBehaviour {
 		}
 	}
 
+
+
+	public bool ShouldWrite = false;
+	public FileWriter _MyFileWriter;
+
+	void WriteAngle(string XOrY, float angle){
+		_MyFileWriter = GameObject.FindGameObjectWithTag("FileWriter").GetComponent<FileWriter>();
+		_MyFileWriter.AppendToFile(XOrY + "," + angle + ",");
+	}
+
+
+
+
 	void RotateHiltX(float angle){
 		_MyHiltTransform.Rotate(angle, 0.0f, 0.0f, Space.World);
 		currentWorldRotX += angle;
+
+
+		//WRITING THINGS
+		WriteAngle("x", angle);
 	}
 
 	void RotateHiltY(float angle){
 		_MyHiltTransform.Rotate(0.0f, angle, 0.0f, Space.World);
 		currentWorldRotY += angle;
+
+		//WRITING THINGS
+		WriteAngle("y", angle);
 	}
 
 	void ReturnTipToCenter(){
@@ -160,7 +180,7 @@ public class SwordController : MonoBehaviour {
 
 	public void AIParrySix(){
 		float slerpTime = 0.04f;
-		Quaternion target = new Quaternion(originalRot.x, originalRot.y, originalRot.z, originalRot.w + 45.0f);
+		Quaternion target = new Quaternion(originalRot.x, originalRot.y, originalRot.z, originalRot.w - 45.0f);
 		_MyHiltTransform.rotation = Quaternion.Slerp(_MyHiltTransform.rotation, target, slerpTime);
 	}
 

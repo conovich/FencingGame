@@ -163,8 +163,11 @@ public class SwordAI : MonoBehaviour {
 		ExecuteResponse();
 	}
 
+	//working on this! debugging just parry six for now
 	void ExecuteResponse(){
-		switch (_MyResponse.text){
+		_myAISwordController.AIParrySix();
+		//uncomment laterrrrr
+		/*switch (_MyResponse.text){
 		case "parry six":
 			_myAISwordController.AIParrySix();
 			break;
@@ -189,7 +192,7 @@ public class SwordAI : MonoBehaviour {
 		case "parry seven":
 			_myAISwordController.AIParrySeven();
 			break;
-		}
+		}*/
 	}
 
 }
