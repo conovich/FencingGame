@@ -9,7 +9,7 @@ public class FileWriter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		FilePath = @"C:\Users\Corey\Documents\GitHub\FencingGame\Assets\TextFiles\FencingMoves";
+		FilePath = @"C:\Users\Corey\Documents\GitHub\FencingGame\Assets\TextFiles\Output\FencingMoves";
 
 		// This text is added only once to the file. 
 		if (!System.IO.File.Exists(FilePath))
@@ -40,7 +40,7 @@ public class FileWriter : MonoBehaviour {
 		//parry seven
 		if(Input.GetKeyDown(KeyCode.Alpha7)){
 			AddMoveToFile("ParrySeven");
-			Debug.Log("ParrySeven");
+			Debug.Log("ParrySeven ");
 		}
 		//parry eight
 		if(Input.GetKeyDown(KeyCode.Alpha8)){
@@ -49,16 +49,40 @@ public class FileWriter : MonoBehaviour {
 		}
 
 		//circle six
+		if(Input.GetKeyDown(KeyCode.S)){
+			AddMoveToFile("CircleSix");
+			Debug.Log("CircleSix");
+		}
 
 		//circle four
+		if(Input.GetKeyDown(KeyCode.F)){
+			AddMoveToFile("CircleFour");
+			Debug.Log("CircleFour");
+		}
 
 		//disengage in
+		if(Input.GetKeyDown(KeyCode.I)){
+			AddMoveToFile("DisengageIn");
+			Debug.Log("DisengageIn");
+		}
 
 		//disengage out
+		if(Input.GetKeyDown(KeyCode.O)){
+			AddMoveToFile("DisengageOut");
+			Debug.Log("DisengageOut");
+		}
 
 		//one-two in
+		if(Input.GetKeyDown(KeyCode.Alpha1)){
+			AddMoveToFile("OneTwoIn");
+			Debug.Log("OneTwoIn");
+		}
 
 		//one-two out
+		if(Input.GetKeyDown(KeyCode.Alpha2)){
+			AddMoveToFile("OneTwoOut");
+			Debug.Log("OneTwoOut");
+		}
 
 
 	}
