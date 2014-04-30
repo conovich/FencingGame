@@ -4260,6 +4260,7 @@ GameObject:
   - 114: {fileID: 529846564}
   - 54: {fileID: 529846563}
   - 114: {fileID: 529846562}
+  - 114: {fileID: 529846567}
   m_Layer: 0
   m_Name: Player2Sword
   m_TagString: Player2Sword
@@ -4372,6 +4373,27 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &529846567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529846560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986f576e32963f040b20062e82365c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parrySixText: {fileID: 4900000, guid: 9bb26adbe8ca2524799c22ddfb6a41d0, type: 3}
+  parryFourText: {fileID: 4900000, guid: 781e4387b0892d34c9cdf08009a833e8, type: 3}
+  circleFourText: {fileID: 4900000, guid: 263855a4854b44b409a9065dac2cf384, type: 3}
+  circleSixText: {fileID: 4900000, guid: 4e08e0ad76b9c0447a297f4891f3d26b, type: 3}
+  parryEightText: {fileID: 4900000, guid: 0312199cb9966d3439e2099378629dea, type: 3}
+  parrySevenText: {fileID: 4900000, guid: f4e3b211623985c4aa3c1bfa5efe65fd, type: 3}
+  disengageInText: {fileID: 4900000, guid: 219dc558d3d69614bbb09632db039d25, type: 3}
+  disengageOutText: {fileID: 4900000, guid: a3d2cc88a51981246bb57e536c342d8c, type: 3}
+  oneTwoInOutText: {fileID: 4900000, guid: bca2355593bf25a429720bb4d5b53c49, type: 3}
+  oneTwoOutInText: {fileID: 4900000, guid: f06608e11807cc4488b0df34a799b389, type: 3}
 --- !u!1001 &535658915
 Prefab:
   m_ObjectHideFlags: 0
