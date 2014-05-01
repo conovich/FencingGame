@@ -14,6 +14,8 @@ public class SwordTip : MonoBehaviour {
 
 	private LightBox _LightBoxScript;
 
+	public SwordAI _SwordAI;
+
 
 	// Use this for initialization
 	void Start () {
@@ -32,9 +34,19 @@ public class SwordTip : MonoBehaviour {
 		if(collision.collider.tag == "Player2Collider"){ //an opponent hit! this needs to be more "if it's player two..." or something more versatile.
 			//should tell gamestate to update score, lightbox to update lights
 			P1HitP2();
+			if(GameState.playerSelection == GameState.PlayerSelection.singlePlayer && _MyPlayer.tag == "Player2"){
+				if(_SwordAI.lastMotionExecuted != ""){
+					_SwordAI.UpdateSuccessfulMove(_SwordAI.lastMotionExecuted, -1);
+				}
+			}
 		}
 		else if(collision.collider.tag == "Player1Collider"){
 			P2HitP1();
+			if(GameState.playerSelection == GameState.PlayerSelection.singlePlayer && _MyPlayer.tag == "Player2"){
+				if(_SwordAI.lastMotionExecuted != ""){
+					_SwordAI.UpdateSuccessfulMove(_SwordAI.lastMotionExecuted, 1);
+				}
+			}
 		}
 		if(collision.collider.tag == "TipTargetP1" && _MyPlayer.tag == "Player"){
 			ChangeTipTargetAlpha(1.0f, collision.gameObject);

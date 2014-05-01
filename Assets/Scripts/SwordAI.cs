@@ -8,7 +8,7 @@ public class SwordAI : MonoBehaviour {
 	public Player _Player1;
 
 		
-	public List<Action> _MotherList;
+	public static List<Action> _MotherList;
 	public TextAsset _ActionResponseText;
 
 	public GUIText _MyResponse;
@@ -19,13 +19,16 @@ public class SwordAI : MonoBehaviour {
 
 
 	private bool shouldExecuteMotion = false;
+	public string lastMotionExecuted = "";
 
 	public class Action{
 		public List<Action> _PossibilitySpace;
 		public string name;
 
+		public int weight;
+
 		public Action(){
-			_PossibilitySpace = new List<Action>  ();
+			_PossibilitySpace = new List<Action>();
 		}
 		public Action(string newName){
 			name = newName;
@@ -39,7 +42,9 @@ public class SwordAI : MonoBehaviour {
 		_myAISwordController = GameObject.FindGameObjectWithTag("Player2Sword").GetComponent<SwordController>();
 		_mySwordMotionParser = GameObject.FindGameObjectWithTag("Player2Sword").GetComponent<SwordMotionParser>();
 
-		InstantiateMotherList();
+		if(_MotherList == null){
+			InstantiateMotherList();
+		}
 		Debug.Log("startinggggg");
 		_OldPlayerAction = _Player1._MyActionText.text;
 	}
@@ -54,6 +59,7 @@ public class SwordAI : MonoBehaviour {
 		if(shouldExecuteMotion){
 			ExecuteResponse();
 		}
+
 	}
 		
 	bool IsInMotherList(string name){
@@ -169,6 +175,7 @@ public class SwordAI : MonoBehaviour {
 		_MyResponse.text = myResponse;
 
 		_mySwordMotionParser.FillXYLists(myResponse);
+		lastMotionExecuted = myResponse;
 		shouldExecuteMotion = true;
 	}
 
@@ -187,36 +194,13 @@ public class SwordAI : MonoBehaviour {
 			//set this once we're done executing the motion!
 			shouldExecuteMotion = false;
 		}
+	}
 
-		//AIParrySix();
-		//uncomment laterrrrr
-		/*switch (_MyResponse.text){
-		case "parry six":
-			_myAISwordController.AIParrySix();
-			break;
-		case "parry four":
-			_myAISwordController.AIParryFour();
-			break;
-		case "disengage in":
-			_myAISwordController.AIDisengageIn();
-			break;
-		case "disengage out":
-			_myAISwordController.AIDisengageOut();
-			break;
-		case "circle four":
-			_myAISwordController.AICircleFour();
-			break;
-		case "circle six":
-			_myAISwordController.AICircleSix();
-			break;
-		case "parry eight":
-			_myAISwordController.AIParryEight();
-			break;
-		case "parry seven":
-			_myAISwordController.AIParrySeven();
-			break;
-		}*/
-		
+	public void UpdateSuccessfulMove(string move, int additionalWeight){
+		Action moveAction = FindInMotherList(move);
+		moveAction.weight += additionalWeight;
+		lastMotionExecuted = "";
+		Debug.Log("updated successful move " + move + moveAction.weight.ToString());
 	}
 
 

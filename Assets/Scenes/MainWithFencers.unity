@@ -4419,6 +4419,7 @@ MonoBehaviour:
   _Player1: {fileID: 78145354}
   _ActionResponseText: {fileID: 4900000, guid: 3aa3dea452a8c6a418c34b702aa0cfc8, type: 3}
   _MyResponse: {fileID: 1841301317}
+  lastMotionExecuted: 
 --- !u!1001 &535658915
 Prefab:
   m_ObjectHideFlags: 0
@@ -6946,6 +6947,7 @@ MonoBehaviour:
   _MyPlayer: {fileID: 1444483059}
   _MySequence: []
   _SwordInput: 0
+  _SwordAI: {fileID: 529846568}
 --- !u!65 &821975132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7386,6 +7388,7 @@ MonoBehaviour:
   _MyPlayer: {fileID: 78145351}
   _MySequence: []
   _SwordInput: 0
+  _SwordAI: {fileID: 0}
 --- !u!65 &874867564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13509,6 +13512,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 82.6996613
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
+      propertyPath: _SwordAI
+      value: 
+      objectReference: {fileID: 529846568}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874561d133b9fd746b5cd64647beafcc, type: 2}
   m_RootGameObject: {fileID: 529846560}

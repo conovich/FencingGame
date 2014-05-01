@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//from internetz.
 public class GuiTextResize : MonoBehaviour {
 
 	float virtualWidth = 1920.0f;
