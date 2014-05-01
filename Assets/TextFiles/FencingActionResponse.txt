@@ -6,12 +6,12 @@ lunge recover inside,advance,retreat,double advance,double retreat,parry four,ci
 lunge recover outside,advance,retreat,double advance,double retreat,parry six,circle four,parry seven
 extend inside,advance,retreat,parry four,circle six,parry eight
 extend outside,advance,retreat,parry six,circle four,parry seven
-parry six,advance,retreat,parry six,circle four,parry seven,disengage outside
-parry four,advance,retreat,parry four,circle six,parry eight,disengage inside
-parry seven,advance,retreat,disengage inside
-parry eight,advance,retreat,disengage outside
+parry six,advance,retreat,parry six,circle four,parry seven,disengage out
+parry four,advance,retreat,parry four,circle six,parry eight,disengage in
+parry seven,advance,retreat,disengage in
+parry eight,advance,retreat,disengage out
 circle six,advance,retreat,parry six,circle four,parry seven
-circle four,advance,retreat,circle six,parry eight,disengage inside
+circle four,advance,retreat,circle six,parry eight,disengage in
 disengage in,advance,retreat,parry four,circle six,parry eight
 disengage out,advance,retreat,parry six,circle four,parry seven
 one two in out,advance,retreat,parry six,circle four,parry seven

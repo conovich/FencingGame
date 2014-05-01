@@ -9,12 +9,9 @@ public class JointFollow: MonoBehaviour {
 
 	public Vector3 _ChangeInRot;
 
-	Vector3 _origFollowRot;
-	Vector3 _origMyRot;
 	// Use this for initialization
 	void Start () {
-		_origFollowRot = _JointToFollow.rotation.eulerAngles;
-		_origMyRot = _MyRoot.rotation.eulerAngles;
+
 	}
 	
 	// Update is called once per frame

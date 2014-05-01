@@ -27,8 +27,6 @@ public class ControllerInput : MonoBehaviour {
 	}
 
 	public void GetControllers(){
-		Debug.Log("MEEP" + GameState.playerSelection);
-
 		// Find a PlayerIndex, for a single player game
 		// Will find the first controller that is connected and use it
 		if (!player1IndexSet || !prevState1.IsConnected)

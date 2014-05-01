@@ -1,0 +1,14 @@
+lunge recover inside,parry four,circle six,parry eight
+lunge recover outside,parry six,circle four,parry seven
+extend inside,parry four,circle six,parry eight
+extend outside,parry six,circle four,parry seven
+parry six,parry six,circle four,parry seven,disengage out
+parry four,parry four,circle six,parry eight,disengage in
+parry seven,disengage in
+parry eight,disengage out
+circle six,parry six,circle four,parry seven
+circle four,circle six,parry eight,disengage in
+disengage in,parry four,circle six,parry eight
+disengage out,parry six,circle four,parry seven
+one two in out,parry six,circle four,parry seven
+one two out in,parry four,circle six,parry eight

@@ -115,7 +115,7 @@ public class SwordController : MonoBehaviour {
 	}
 
 
-
+	//FILE WRITING...
 	public bool ShouldWrite = false;
 	public FileWriter _MyFileWriter;
 
@@ -127,21 +127,21 @@ public class SwordController : MonoBehaviour {
 
 
 
-	void RotateHiltX(float angle){
+	public void RotateHiltX(float angle){
 		_MyHiltTransform.Rotate(angle, 0.0f, 0.0f, Space.World);
 		currentWorldRotX += angle;
 
 
 		//WRITING THINGS
-		WriteAngle("x", angle);
+		//WriteAngle("x", angle);
 	}
 
-	void RotateHiltY(float angle){
+	public void RotateHiltY(float angle){
 		_MyHiltTransform.Rotate(0.0f, angle, 0.0f, Space.World);
 		currentWorldRotY += angle;
 
 		//WRITING THINGS
-		WriteAngle("y", angle);
+		//WriteAngle("y", angle);
 	}
 
 	void ReturnTipToCenter(){
@@ -175,40 +175,6 @@ public class SwordController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision){ //should be for rigidbody collisions -- blade, not tip
-
-	}
-
-	public void AIParrySix(){
-		float slerpTime = 0.04f;
-		Quaternion target = new Quaternion(originalRot.x, originalRot.y, originalRot.z, originalRot.w - 45.0f);
-		_MyHiltTransform.rotation = Quaternion.Slerp(_MyHiltTransform.rotation, target, slerpTime);
-	}
-
-	public void AIParryFour(){
-
-	}
-
-	public void AICircleSix(){
-		
-	}
-
-	public void AICircleFour(){
-		
-	}
-
-	public void AIParryEight(){
-
-	}
-
-	public void AIParrySeven(){
-
-	}
-
-	public void AIDisengageIn(){
-
-	}
-
-	public void AIDisengageOut(){
 
 	}
 

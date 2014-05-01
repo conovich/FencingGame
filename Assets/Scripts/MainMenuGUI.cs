@@ -18,20 +18,20 @@ public class MainMenuGUI : MonoBehaviour {
 	void OnGUI(){
 		GUI.skin.font = _MyFont;
 
-		float buttonHeight = 30;
-		float buttonWidth = 120;
+		float buttonHeight = 60;
+		float buttonWidth = 240;
 		if(GUI.Button(new Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - buttonHeight/2, buttonWidth, buttonHeight), "START MATCH")){
 			Application.LoadLevel("MainWithFencers");
 			GameState.Instance.SetState(GameState.State.inCountdown);
 			GameState.resetAllInPlay = true;
 		}
 		//make multiplayer vs single player toggle here, to set gamestate's playerselection enum 
-		if(GUI.Toggle(new Rect(10, 40, 120, 20), isSingleplayer, "Single Player")){
+		if(GUI.Toggle(new Rect(10, 40, 240, 80), isSingleplayer, "Single Player")){
 			isSingleplayer = true;
 			GameState.playerSelection = GameState.PlayerSelection.singlePlayer;
 
 		}
-		if(GUI.Toggle ( new Rect(10, 60, 120, 20), !isSingleplayer, "Multiplayer")){
+		if(GUI.Toggle ( new Rect(10, 80, 240, 80), !isSingleplayer, "Multiplayer")){
 			isSingleplayer = false;
 			GameState.playerSelection = GameState.PlayerSelection.multiplayer;
 			//GameState.Instance._MyControllerInput.GetControllers();

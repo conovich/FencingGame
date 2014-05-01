@@ -15,7 +15,10 @@ public class SwordAI : MonoBehaviour {
 
 	private string _OldPlayerAction;
 	private SwordController _myAISwordController;
+	private SwordMotionParser _mySwordMotionParser;
 
+
+	private bool shouldExecuteMotion = false;
 
 	public class Action{
 		public List<Action> _PossibilitySpace;
@@ -34,7 +37,7 @@ public class SwordAI : MonoBehaviour {
 	void Start () {
 		_Player1 = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		_myAISwordController = GameObject.FindGameObjectWithTag("Player2Sword").GetComponent<SwordController>();
-
+		_mySwordMotionParser = GameObject.FindGameObjectWithTag("Player2Sword").GetComponent<SwordMotionParser>();
 
 		InstantiateMotherList();
 		Debug.Log("startinggggg");
@@ -46,6 +49,10 @@ public class SwordAI : MonoBehaviour {
 		IsInMotherList("hi");//debug
 		if(_OldPlayerAction != _Player1._MyActionText.text){ //if the player action has changed... oldplayeraction gets set in ParsePlayerAction()
 			ParsePlayerAction();
+		}
+
+		if(shouldExecuteMotion){
+			ExecuteResponse();
 		}
 	}
 		
@@ -158,14 +165,30 @@ public class SwordAI : MonoBehaviour {
 		Action playerAction = FindInMotherList(playerActionString);
 		int random = Random.Range(0, playerAction._PossibilitySpace.Count);
 		//Debug.Log(playerAction._PossibilitySpace[random]);
-		_MyResponse.text = playerAction._PossibilitySpace[random].name;
+		string myResponse = playerAction._PossibilitySpace[random].name;
+		_MyResponse.text = myResponse;
 
-		ExecuteResponse();
+		_mySwordMotionParser.FillXYLists(myResponse);
+		shouldExecuteMotion = true;
 	}
 
 	//working on this! debugging just parry six for now
 	void ExecuteResponse(){
-		_myAISwordController.AIParrySix();
+		float nextXRot = 0.0f;
+		float nextYRot = 0.0f;
+		if(_mySwordMotionParser.GetNextX(out nextXRot)){
+			if(_mySwordMotionParser.GetNextY(out nextYRot)){
+				//rotate sword hilt by nextXRot and nextYRot much.
+				_myAISwordController.RotateHiltX(nextXRot);
+				_myAISwordController.RotateHiltY(nextYRot);
+			}
+		}
+		else{
+			//set this once we're done executing the motion!
+			shouldExecuteMotion = false;
+		}
+
+		//AIParrySix();
 		//uncomment laterrrrr
 		/*switch (_MyResponse.text){
 		case "parry six":
@@ -193,6 +216,8 @@ public class SwordAI : MonoBehaviour {
 			_myAISwordController.AIParrySeven();
 			break;
 		}*/
+		
 	}
+
 
 }

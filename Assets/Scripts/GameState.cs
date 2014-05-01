@@ -64,7 +64,6 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("My player state is: " + playerSelection);
 		if(Application.loadedLevel == 1){
 			if(resetAllInPlay){
 				Reset ();
@@ -148,7 +147,6 @@ public class GameState : MonoBehaviour {
 
 	public void IncrementP1Score(){
 		P1Score++;
-		Debug.Log(P1Score);
 	}
 
 	public void IncrementP2Score(){

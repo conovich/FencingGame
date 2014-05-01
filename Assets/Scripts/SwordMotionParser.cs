@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-public class SwordMotionPlayer : MonoBehaviour {
-	List<float> xRots;
-	List<float> yRots;
+public class SwordMotionParser : MonoBehaviour {
+	public List<float> xRots;
+	public List<float> yRots;
+
+	public int myXCount;
+	public int myYCount;
 
 	//rotation files
 	public TextAsset parrySixText;
@@ -22,7 +25,7 @@ public class SwordMotionPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		FillXYLists("parry six");
+		//FillXYLists("parry six");
 	}
 	
 	// Update is called once per frame
@@ -30,7 +33,7 @@ public class SwordMotionPlayer : MonoBehaviour {
 	
 	}
 
-	void FillXYLists(string actionName){
+	public void FillXYLists(string actionName){
 		xRots = new List<float>();
 		yRots = new List<float>();
 
@@ -78,6 +81,25 @@ public class SwordMotionPlayer : MonoBehaviour {
 			xRots.Add(float.Parse(splitRotations[i+1]));
 			yRots.Add(float.Parse(splitRotations[i+3]));
 		}
-		bool debugBool = true;
+	}
+
+	public bool GetNextX(out float nextX){
+		if(xRots.Count > 0){
+			nextX = xRots[0];
+			xRots.RemoveAt(0);
+			return true;
+		}
+		nextX = 0.0f;
+		return false;
+	}
+
+	public bool GetNextY(out float nextY){
+		if(yRots.Count > 0){
+			nextY = yRots[0];
+			yRots.RemoveAt(0);
+			return true;
+		}
+		nextY = 0.0f;
+		return false;
 	}
 }

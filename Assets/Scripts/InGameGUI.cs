@@ -35,22 +35,22 @@ public class InGameGUI : MonoBehaviour {
 			Countdown();
 			break;
 		case 1: //inPlay
-			if(GUI.Button(new Rect(0, 0, 50, 30), "Pause")){
+			if(GUI.Button(new Rect(0, 0, Screen.width/7.0f, Screen.height/10.0f), "Pause")){
 				GameState.Instance.SetState(GameState.State.paused);
 				Debug.Log(GameState.Instance.debugView_CurrentState);
 			}
 
-			if(GUI.Button(new Rect(60, 0, 60, 30), "Restart")){ //in play reset button
+			if(GUI.Button(new Rect((Screen.width/7.0f)+20.0f, 0, Screen.width/7.0f, Screen.height/10.0f), "Restart")){ //in play reset button
 				Application.LoadLevel("MainMenu");
 			}
 			break;
 		case 2: //paused
-			if(GUI.Button(new Rect(0, 0, 50, 30), "Play")){
+			if(GUI.Button(new Rect(0, 0, Screen.width/7.0f, Screen.height/10.0f), "Play")){
 				GameState.Instance.SetState(GameState.State.inPlay);
 				Debug.Log(GameState.Instance.debugView_CurrentState);
 			}
 
-			if(GUI.Button(new Rect(60, 0, 60, 30), "Restart")){ //pause reset button
+			if(GUI.Button(new Rect((Screen.width/7.0f)+20.0f, 0, Screen.width/7.0f, Screen.height/10.0f), "Restart")){ //pause reset button
 				Application.LoadLevel("MainMenu");
 			}
 			break;
@@ -96,7 +96,8 @@ public class InGameGUI : MonoBehaviour {
 	void TellScore(){
 		if(tellScoreTimer > 0){
 			tellScoreTimer -= Time.deltaTime;
-			TellScoreText.text = "Player" + "Scored!" + "\n" + "P1: " + P1Score.ToString() + ", P2: " + P2Score.ToString();
+			TellScoreText.text = "Player" + "Scored!" + "\n" + "P1: " + P1Score.text.ToString() + ", P2: " + P2Score.text.ToString();
+			Debug.Log(TellScoreText.text);
 		}
 		else{
 			TellScoreText.text = "";

@@ -26,16 +26,14 @@ public class SwordTip : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter(Collision collision){
-		Debug.Log("Hit something!");
 		if(collision.collider.tag == "TipConstraint"){
 
 		}
 		if(collision.collider.tag == "Player2Collider"){ //an opponent hit! this needs to be more "if it's player two..." or something more versatile.
-			Debug.Log("Hit player 2!"); //should tell gamestate to update score, lightbox to update lights
+			//should tell gamestate to update score, lightbox to update lights
 			P1HitP2();
 		}
 		else if(collision.collider.tag == "Player1Collider"){
-			Debug.Log("Hit player 1!");
 			P2HitP1();
 		}
 		if(collision.collider.tag == "TipTargetP1" && _MyPlayer.tag == "Player"){
@@ -56,7 +54,6 @@ public class SwordTip : MonoBehaviour {
 		_MySequence.Clear();
 	}
 
-	//instead should set all tiptarget colors back to normal when no more input???
 	void OnCollisionExit(Collision collision){
 		if(collision.collider.tag == "TipTargetP1" && _MyPlayer.tag == "Player"){
 			ChangeTipTargetAlpha(100.0f/255.0f, collision.gameObject);
