@@ -6,6 +6,7 @@ public class DistanceAI : MonoBehaviour {
 	public Transform _PlayerFencer;
 
 	public float _LungeDistance;
+	public float _TooCloseDistance;
 
 	private List<string> MovementListClose;
 	private List<string> MovementListFar;
@@ -53,6 +54,9 @@ public class DistanceAI : MonoBehaviour {
 		if(GetDistanceToPlayer() < _LungeDistance){
 			int random = Random.Range(0, MovementListClose.Count);
 			return MovementListClose[random];
+		}
+		else if(GetDistanceToPlayer() < _TooCloseDistance){
+			return "Retreat";
 		}
 		else{
 			int random = Random.Range(0, MovementListFar.Count);
