@@ -1683,7 +1683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &181329844
 Transform:
   m_ObjectHideFlags: 0
@@ -5837,7 +5837,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13200016, guid: e4bc6d43925d3534cb04a8b2d89ec25f, type: 2}
       propertyPath: m_Color.rgba
@@ -10266,7 +10266,7 @@ MonoBehaviour:
   Target: {fileID: 1668335300}
   X: 1
   Y: 0
-  Z: 0
+  Z: 1
 --- !u!1 &1293412707
 GameObject:
   m_ObjectHideFlags: 0

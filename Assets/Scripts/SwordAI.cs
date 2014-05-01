@@ -169,14 +169,45 @@ public class SwordAI : MonoBehaviour {
 		
 	void SelectResponse(string playerActionString){
 		Action playerAction = FindInMotherList(playerActionString);
+
+	
+		/*original
 		int random = Random.Range(0, playerAction._PossibilitySpace.Count);
-		//Debug.Log(playerAction._PossibilitySpace[random]);
 		string myResponse = playerAction._PossibilitySpace[random].name;
+		*/
+		//new with WEIGHTS
+		int bestWeight = GetMaxWeight(playerAction._PossibilitySpace);
+		List<Action> bestActions = GetBestActions(playerAction._PossibilitySpace, bestWeight);
+		int random = Random.Range(0, bestActions.Count);
+		string myResponse = bestActions[random].name;
+
+
 		_MyResponse.text = myResponse;
+		
 
 		_mySwordMotionParser.FillXYLists(myResponse);
 		lastMotionExecuted = myResponse;
 		shouldExecuteMotion = true;
+	}
+
+	List<Action> GetBestActions(List<Action> aPossibilitySpace, int bestWeight){
+		List<Action> bestActions = new List<Action>();
+		for (int i = 0; i < aPossibilitySpace.Count; i++){
+			if(aPossibilitySpace[i].weight == bestWeight){
+				bestActions.Add(aPossibilitySpace[i]);
+			}
+		}
+		return bestActions;
+	}
+
+	int GetMaxWeight(List<Action> aPossibilitySpace){
+		int maxWeight = 0;
+		for (int i = 0; i < aPossibilitySpace.Count; i++){
+			if(aPossibilitySpace[i].weight > maxWeight){
+				maxWeight = aPossibilitySpace[i].weight;
+			}
+		}
+		return maxWeight;
 	}
 
 	//working on this! debugging just parry six for now
