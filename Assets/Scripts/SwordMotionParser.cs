@@ -25,7 +25,7 @@ public class SwordMotionParser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//FillXYLists("parry six");
+
 	}
 	
 	// Update is called once per frame

@@ -130,7 +130,6 @@ public class GameState : MonoBehaviour {
 		Application.LoadLevel("MatchOver");
 	}
 
-	//Should change this to a reload scene perhaps? That's all Player1.reset does right now...
 	void ResetPlayers(){
 		Player1.ResetScene();
 		//Player2.Reset();

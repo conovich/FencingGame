@@ -8234,7 +8234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HiltTag: Hilt2
-  _SwordClash: {fileID: 8300000, guid: c8819d9ed7b2a314791223e611a969d6, type: 3}
+  _SwordAudio: {fileID: 991412265}
 --- !u!54 &991412264
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8259,7 +8259,7 @@ AudioSource:
   m_GameObject: {fileID: 991412260}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c8819d9ed7b2a314791223e611a969d6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8303,7 +8303,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: .430555552
       inSlope: 0
       outSlope: 0
       tangentMode: 0

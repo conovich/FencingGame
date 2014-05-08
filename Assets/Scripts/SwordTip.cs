@@ -19,6 +19,7 @@ public class SwordTip : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//comment out for the move-mapping test scene
 		GetLightBoxScript();
 	}
 	
@@ -73,6 +74,22 @@ public class SwordTip : MonoBehaviour {
 		if(collision.collider.tag == "TipTargetP2" && _MyPlayer.tag == "Player2"){
 			ChangeTipTargetAlpha(100.0f/255.0f, collision.gameObject);
 		}
+
+		//use the following for the move-mapping test scene
+		/*
+		if(collision.collider.tag == "TipTargetP1"){
+			ChangeTipTargetAlpha(1.0f, collision.gameObject);
+			if(_SwordInput){
+				_MySequence.Add(collision.gameObject.name);
+			}
+		}
+		else if(collision.collider.tag == "TipTargetP2"){
+			ChangeTipTargetAlpha(1.0f, collision.gameObject);
+			if(_SwordInput){
+				_MySequence.Add(collision.gameObject.name);
+			}
+		}
+		*/
 	}
 
 	void ChangeTipTargetAlpha(float newAlpha, GameObject target){
